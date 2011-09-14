@@ -1,0 +1,152 @@
+infile = g/NQF_Retooled_Measure_0002.json outfile = h/NQF_Retooled_Measure_0002.json
+***Processing section IPP
+Single child...typcode = SBS
+Single child...typcode = COMP
+Single child...typcode = SBS
+Single child...typcode = COMP
+section 
+IPP.0
+section birthdate
+IPP.0.0.0
+section measurement_period
+IPP.1
+section birthdate
+IPP.1.0.0
+section measurement_period
+mergedatetiminginterval -- section IPP.0 depth = 1 title Patient characteristic: birth date ph_id = birthdate
+mergedatetiminginterval -- section IPP.1 depth = 1 title Patient characteristic: birth date ph_id = birthdate
+emitCode n1 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true ) depth = section['depth]
+emitCode n2 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true ) depth = section['depth]
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+node IPP has children = 2
+***End of loop...@@change = true
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+node IPP has children = 2
+***End of loop...@@change = false
+***Processing section DENOM
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+section 
+DENOM.0
+section 
+DENOM.1
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.1.0.0
+section measurement_period
+DENOM.2
+section measure.pharyngitis_diagnosis_active
+DENOM.2.0.0
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.2.0.0.0.0
+section measurement_period
+DENOM.3
+section 
+DENOM.3.0
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.3.0.0.0
+section measurement_period
+DENOM.3.1
+section 
+DENOM.3.1.0
+section measure.pharyngitis_antibiotics_medication_dispensed
+DENOM.3.1.1
+section measure.pharyngitis_antibiotics_medication_order
+DENOM.3.1.2
+section measure.pharyngitis_antibiotics_medication_active
+mergeEventListDuringInterval -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+mergeEventListDuringInterval -- section depth = 1 title  ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+mergeEventListDuringInterval -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+emitCode n4 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n5 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n6 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n3 status = emit pattern = merged_value_sets type = event_list value = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active) depth = section['depth]
+mergeEventListDuringEventList -- section depth = 1 title Diagnosis active: pharyngitis ph_id = measure.pharyngitis_diagnosis_active
+emitCode n7 status = emit pattern = eventlistduringeventlist type = event_list value = eventsDuringEvents(measure.pharyngitis_diagnosis_active, n5) depth = section['depth]
+mergeEventListTimingEventList -- section DENOM.3 depth = 2 title  ph_id = 
+node DENOM.3 has children = 2
+emitCode n8 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(n6, n3, SBS, 3,0, days, d, true, true) depth = section['depth]
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+node DENOM has children = 4
+***End of loop...@@change = true
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+node DENOM has children = 4
+***End of loop...@@change = false
+***Processing section NUMER
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = EAS
+Single child...typcode = COMP
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = SAE
+Single child...typcode = COMP
+section 
+NUMER.0
+section measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.0.0.0
+section 
+NUMER.0.0.0.0
+section measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.0.0.0.0.0.0
+section measurement_period
+NUMER.0.0.0.1
+section 
+NUMER.0.0.0.1.0
+section measure.pharyngitis_antibiotics_medication_dispensed
+NUMER.0.0.0.1.1
+section measure.pharyngitis_antibiotics_medication_order
+NUMER.0.0.0.1.2
+section measure.pharyngitis_antibiotics_medication_active
+NUMER.1
+section measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.1.0.0
+section 
+NUMER.1.0.0.0
+section measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.1.0.0.0.0.0
+section measurement_period
+NUMER.1.0.0.1
+section 
+NUMER.1.0.0.1.0
+section measure.pharyngitis_antibiotics_medication_dispensed
+NUMER.1.0.0.1.1
+section measure.pharyngitis_antibiotics_medication_order
+NUMER.1.0.0.1.2
+section measure.pharyngitis_antibiotics_medication_active
+mergeEventListDuringInterval -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+mergeEventListDuringInterval -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+emitCode n11 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n9 status = emit pattern = merged_value_sets type = event_list value = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active) depth = section['depth]
+emitCode n12 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n10 status = emit pattern = merged_value_sets type = event_list value = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active) depth = section['depth]
+mergeEventListTimingEventList -- section NUMER.0.0.0 depth = 2 title  ph_id = 
+node NUMER.0.0.0 has children = 2
+mergeEventListTimingEventList -- section NUMER.1.0.0 depth = 2 title  ph_id = 
+node NUMER.1.0.0 has children = 2
+emitCode n13 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(n11, n9, SBS, 3,0, days, d, true, true) depth = section['depth]
+emitCode n14 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(n12, n10, SBS, 3,0, days, d, true, true) depth = section['depth]
+mergeEventListTimingEventListFlat -- section NUMER.0  typecode PRCN
+node NUMER.0 has children = 1
+mergeEventListTimingEventListFlat -- section NUMER.1  typecode PRCN
+node NUMER.1 has children = 1
+emitCode n15 status = emit pattern = eventlisttimingeventlistflat type = event_list value = eventsTimingEvents(n13, measure.group_a_streptococcus_test_laboratory_test_performed, EAS, 3,0, d, none, true, true) depth = section['depth]
+emitCode n16 status = emit pattern = eventlisttimingeventlistflat type = event_list value = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n14, SAE, 3,0, d, none, true, true) depth = section['depth]
+***End of loop...@@change = true
+mergeEventListTimingEventListFlat -- section NUMER  typecode 
+node NUMER has children = 2
+***End of loop...@@change = false

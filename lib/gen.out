@@ -1,0 +1,790 @@
+infile  = g/NQF_Retooled_Measure_0002.json  infilename = g/NQF_Retooled_Measure_0002.json outfile = h/NQF_Retooled_Measure_0002.json
+Processing g/NQF_Retooled_Measure_0002.json
+infile = g/NQF_Retooled_Measure_0002.json outfile = h/NQF_Retooled_Measure_0002.json
+***Processing section IPP
+IPP.0
+IPP.0.0
+IPP.0.0.0
+Single child...typcode = SBS
+Single child...typcode = COMP
+IPP.1
+IPP.1.0
+IPP.1.0.0
+Single child...typcode = SBS
+Single child...typcode = COMP
+IPP.0
+IPP.0.0.0
+IPP.1
+IPP.1.0.0
+labelSectionType -- section 
+section 
+IPP.0
+labelSectionType -- section birthdate
+section birthdate
+IPP.0.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+IPP.1
+labelSectionType -- section birthdate
+section birthdate
+IPP.1.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+mergeSectionValueSets -- section depth = 2 title  ph_id = 
+IPP.0
+mergeSectionValueSets -- section depth = 1 title Patient characteristic: birth date ph_id = birthdate
+IPP.0.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+IPP.1
+mergeSectionValueSets -- section depth = 1 title Patient characteristic: birth date ph_id = birthdate
+IPP.1.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+num_merges = 0
+returning...depth = 2 and num_merges = 0
+IPP.0
+IPP.0.0.0
+IPP.1
+IPP.1.0.0
+emitCode IPP status =  type = unknown value =  depth = section['depth]
+emitCode IPP.0 status =  type = date_single value =  depth = section['depth]
+emitCode IPP.0.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode IPP.1 status =  type = date_single value =  depth = section['depth]
+emitCode IPP.1.0.0 status =  type = date_interval value =  depth = section['depth]
+***Processing section DENOM
+DENOM.0
+DENOM.1
+DENOM.1.0
+DENOM.1.0.0
+Single child...typcode = DURING
+Single child...typcode = COMP
+DENOM.2
+DENOM.2.0
+DENOM.2.0.0
+DENOM.2.0.0.0
+DENOM.2.0.0.0.0
+Single child...typcode = DURING
+Single child...typcode = COMP
+Single child...typcode = DURING
+Single child...typcode = COMP
+DENOM.3
+DENOM.3.0
+DENOM.3.0.0
+DENOM.3.0.0.0
+Single child...typcode = DURING
+Single child...typcode = COMP
+DENOM.3.1
+DENOM.3.1.0
+DENOM.3.1.0.0
+Single child...typcode = COMP
+DENOM.3.1.1
+DENOM.3.1.1.0
+Single child...typcode = COMP
+DENOM.3.1.2
+DENOM.3.1.2.0
+Single child...typcode = COMP
+DENOM.0
+DENOM.1
+DENOM.1.0.0
+DENOM.2
+DENOM.2.0.0
+DENOM.2.0.0.0.0
+DENOM.3
+DENOM.3.0
+DENOM.3.0.0.0
+DENOM.3.1
+DENOM.3.1.0
+DENOM.3.1.1
+DENOM.3.1.2
+labelSectionType -- section 
+section 
+DENOM.0
+labelSectionType -- section 
+section 
+DENOM.1
+labelSectionType -- section measure.encounter_ambulatory_including_pediatrics_encounter
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.1.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+DENOM.2
+labelSectionType -- section measure.pharyngitis_diagnosis_active
+section measure.pharyngitis_diagnosis_active
+DENOM.2.0.0
+labelSectionType -- section measure.encounter_ambulatory_including_pediatrics_encounter
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.2.0.0.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+DENOM.3
+labelSectionType -- section 
+section 
+DENOM.3.0
+labelSectionType -- section measure.encounter_ambulatory_including_pediatrics_encounter
+section measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.3.0.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+DENOM.3.1
+labelSectionType -- section 
+section 
+DENOM.3.1.0
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_dispensed
+section measure.pharyngitis_antibiotics_medication_dispensed
+DENOM.3.1.1
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_order
+section measure.pharyngitis_antibiotics_medication_order
+DENOM.3.1.2
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_active
+section measure.pharyngitis_antibiotics_medication_active
+mergeSectionValueSets -- section depth = 3 title  ph_id = 
+DENOM.0
+mergeSectionValueSets -- section depth = 0 title Initial Patient Population ph_id = 
+conj_code = AND type = ignore
+returning...depth = 0 and num_merges = 0
+DENOM.1
+mergeSectionValueSets -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.1.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+DENOM.2
+mergeSectionValueSets -- section depth = 2 title Diagnosis active: pharyngitis ph_id = measure.pharyngitis_diagnosis_active
+DENOM.2.0.0
+mergeSectionValueSets -- section depth = 1 title  ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.2.0.0.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+num_merges = 0
+returning...depth = 2 and num_merges = 0
+DENOM.3
+mergeSectionValueSets -- section depth = 2 title  ph_id = 
+DENOM.3.0
+mergeSectionValueSets -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+DENOM.3.0.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+DENOM.3.1
+mergeSectionValueSets -- section depth = 1 title  ph_id = 
+DENOM.3.1.0
+mergeSectionValueSets -- section depth = 0 title Medication dispensed: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_dispensed
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+DENOM.3.1.1
+mergeSectionValueSets -- section depth = 0 title Medication order: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_order
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+DENOM.3.1.2
+mergeSectionValueSets -- section depth = 0 title Medication active: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_active
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+num_merges = 3
+num_merges = 0
+returning...depth = 2 and num_merges = 0
+num_merges = 0
+returning...depth = 3 and num_merges = 0
+DENOM.0
+DENOM.1
+DENOM.1.0.0
+DENOM.2
+DENOM.2.0.0
+DENOM.2.0.0.0.0
+DENOM.3
+DENOM.3.0
+DENOM.3.0.0.0
+DENOM.3.1
+n1
+emitCode DENOM status =  type = unknown value =  depth = section['depth]
+emitCode DENOM.0 status =  type = ignore value =  depth = section['depth]
+emitCode DENOM.1 status =  type = event_list value = measure.encounter_ambulatory_including_pediatrics_encounter depth = section['depth]
+emitCode DENOM.1.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode DENOM.2 status =  type = event_list value = measure.pharyngitis_diagnosis_active depth = section['depth]
+emitCode DENOM.2.0.0 status =  type = event_list value = measure.encounter_ambulatory_including_pediatrics_encounter depth = section['depth]
+emitCode DENOM.2.0.0.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode DENOM.3 status =  type = unknown value =  depth = section['depth]
+emitCode DENOM.3.0 status =  type = event_list value = measure.encounter_ambulatory_including_pediatrics_encounter depth = section['depth]
+emitCode DENOM.3.0.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode DENOM.3.1 status =  type = unknown value =  depth = section['depth]
+emitCode n1 status = emit type = event_list value = measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active depth = section['depth]
+***Processing section NUMER
+NUMER.0
+NUMER.0.0
+NUMER.0.0.0
+NUMER.0.0.0.0
+NUMER.0.0.0.0.0
+NUMER.0.0.0.0.0.0
+Single child...typcode = DURING
+Single child...typcode = COMP
+NUMER.0.0.0.1
+NUMER.0.0.0.1.0
+NUMER.0.0.0.1.0.0
+Single child...typcode = COMP
+NUMER.0.0.0.1.1
+NUMER.0.0.0.1.1.0
+Single child...typcode = COMP
+NUMER.0.0.0.1.2
+NUMER.0.0.0.1.2.0
+Single child...typcode = COMP
+Single child...typcode = EAS
+Single child...typcode = COMP
+NUMER.1
+NUMER.1.0
+NUMER.1.0.0
+NUMER.1.0.0.0
+NUMER.1.0.0.0.0
+NUMER.1.0.0.0.0.0
+Single child...typcode = DURING
+Single child...typcode = COMP
+NUMER.1.0.0.1
+NUMER.1.0.0.1.0
+NUMER.1.0.0.1.0.0
+Single child...typcode = COMP
+NUMER.1.0.0.1.1
+NUMER.1.0.0.1.1.0
+Single child...typcode = COMP
+NUMER.1.0.0.1.2
+NUMER.1.0.0.1.2.0
+Single child...typcode = COMP
+Single child...typcode = SAE
+Single child...typcode = COMP
+NUMER.0
+NUMER.0.0.0
+NUMER.0.0.0.0
+NUMER.0.0.0.0.0.0
+NUMER.0.0.0.1
+NUMER.0.0.0.1.0
+NUMER.0.0.0.1.1
+NUMER.0.0.0.1.2
+NUMER.1
+NUMER.1.0.0
+NUMER.1.0.0.0
+NUMER.1.0.0.0.0.0
+NUMER.1.0.0.1
+NUMER.1.0.0.1.0
+NUMER.1.0.0.1.1
+NUMER.1.0.0.1.2
+labelSectionType -- section 
+section 
+NUMER.0
+labelSectionType -- section measure.group_a_streptococcus_test_laboratory_test_performed
+section measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.0.0.0
+labelSectionType -- section 
+section 
+NUMER.0.0.0.0
+labelSectionType -- section measure.encounter_ambulatory_including_pediatrics_encounter
+section measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.0.0.0.0.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+NUMER.0.0.0.1
+labelSectionType -- section 
+section 
+NUMER.0.0.0.1.0
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_dispensed
+section measure.pharyngitis_antibiotics_medication_dispensed
+NUMER.0.0.0.1.1
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_order
+section measure.pharyngitis_antibiotics_medication_order
+NUMER.0.0.0.1.2
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_active
+section measure.pharyngitis_antibiotics_medication_active
+NUMER.1
+labelSectionType -- section measure.group_a_streptococcus_test_laboratory_test_performed
+section measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.1.0.0
+labelSectionType -- section 
+section 
+NUMER.1.0.0.0
+labelSectionType -- section measure.encounter_ambulatory_including_pediatrics_encounter
+section measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.1.0.0.0.0.0
+labelSectionType -- section measurement_period
+section measurement_period
+NUMER.1.0.0.1
+labelSectionType -- section 
+section 
+NUMER.1.0.0.1.0
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_dispensed
+section measure.pharyngitis_antibiotics_medication_dispensed
+NUMER.1.0.0.1.1
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_order
+section measure.pharyngitis_antibiotics_medication_order
+NUMER.1.0.0.1.2
+labelSectionType -- section measure.pharyngitis_antibiotics_medication_active
+section measure.pharyngitis_antibiotics_medication_active
+mergeSectionValueSets -- section depth = 4 title  ph_id = 
+NUMER.0
+mergeSectionValueSets -- section depth = 3 title Laboratory test performed: Group A Streptococcus Test ph_id = measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.0.0.0
+mergeSectionValueSets -- section depth = 2 title  ph_id = 
+NUMER.0.0.0.0
+mergeSectionValueSets -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.0.0.0.0.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+NUMER.0.0.0.1
+mergeSectionValueSets -- section depth = 1 title  ph_id = 
+NUMER.0.0.0.1.0
+mergeSectionValueSets -- section depth = 0 title Medication dispensed: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_dispensed
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+NUMER.0.0.0.1.1
+mergeSectionValueSets -- section depth = 0 title Medication order: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_order
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+NUMER.0.0.0.1.2
+mergeSectionValueSets -- section depth = 0 title Medication active: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_active
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+num_merges = 3
+num_merges = 0
+returning...depth = 2 and num_merges = 0
+num_merges = 0
+returning...depth = 3 and num_merges = 0
+NUMER.1
+mergeSectionValueSets -- section depth = 3 title Laboratory test performed: Group A Streptococcus Test ph_id = measure.group_a_streptococcus_test_laboratory_test_performed
+NUMER.1.0.0
+mergeSectionValueSets -- section depth = 2 title  ph_id = 
+NUMER.1.0.0.0
+mergeSectionValueSets -- section depth = 1 title Encounter: encounter ambulatory including pediatrics ph_id = measure.encounter_ambulatory_including_pediatrics_encounter
+NUMER.1.0.0.0.0.0
+mergeSectionValueSets -- section depth = 0 title Measurement period ph_id = measurement_period
+conj_code =  type = date_interval
+returning...depth = 0 and num_merges = 0
+num_merges = 0
+returning...depth = 1 and num_merges = 0
+NUMER.1.0.0.1
+mergeSectionValueSets -- section depth = 1 title  ph_id = 
+NUMER.1.0.0.1.0
+mergeSectionValueSets -- section depth = 0 title Medication dispensed: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_dispensed
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+NUMER.1.0.0.1.1
+mergeSectionValueSets -- section depth = 0 title Medication order: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_order
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+NUMER.1.0.0.1.2
+mergeSectionValueSets -- section depth = 0 title Medication active: pharyngitis antibiotics ph_id = measure.pharyngitis_antibiotics_medication_active
+conj_code = OR type = event_list
+returning...depth = 0 and num_merges = 1
+num_merges = 3
+num_merges = 0
+returning...depth = 2 and num_merges = 0
+num_merges = 0
+returning...depth = 3 and num_merges = 0
+num_merges = 0
+returning...depth = 4 and num_merges = 0
+NUMER.0
+NUMER.0.0.0
+NUMER.0.0.0.0
+NUMER.0.0.0.0.0.0
+NUMER.0.0.0.1
+n2
+NUMER.1
+NUMER.1.0.0
+NUMER.1.0.0.0
+NUMER.1.0.0.0.0.0
+NUMER.1.0.0.1
+n3
+emitCode NUMER status =  type = unknown value =  depth = section['depth]
+emitCode NUMER.0 status =  type = event_list value = measure.group_a_streptococcus_test_laboratory_test_performed depth = section['depth]
+emitCode NUMER.0.0.0 status =  type = unknown value =  depth = section['depth]
+emitCode NUMER.0.0.0.0 status =  type = event_list value = measure.encounter_ambulatory_including_pediatrics_encounter depth = section['depth]
+emitCode NUMER.0.0.0.0.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode NUMER.0.0.0.1 status =  type = unknown value =  depth = section['depth]
+emitCode n2 status = emit type = event_list value = measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active depth = section['depth]
+emitCode NUMER.1 status =  type = event_list value = measure.group_a_streptococcus_test_laboratory_test_performed depth = section['depth]
+emitCode NUMER.1.0.0 status =  type = unknown value =  depth = section['depth]
+emitCode NUMER.1.0.0.0 status =  type = event_list value = measure.encounter_ambulatory_including_pediatrics_encounter depth = section['depth]
+emitCode NUMER.1.0.0.0.0.0 status =  type = date_interval value =  depth = section['depth]
+emitCode NUMER.1.0.0.1 status =  type = unknown value =  depth = section['depth]
+emitCode n3 status = emit type = event_list value = measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active depth = section['depth]
+{
+  "IPP": {
+    "name": "IPP",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "IPP.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.0.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "low": {
+              "value": "2",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 1,
+        "type": "date_single",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "IPP.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.1.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "high": {
+              "value": "18",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 1,
+        "type": "date_single",
+        "num_merges": 0
+      }
+    ],
+    "maxDepth": 2,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "DENOM": {
+    "name": "DENOM",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "DENOM.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "",
+        "title": "Initial Patient Population",
+        "maxDepth": 0,
+        "type": "ignore",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+        "title": "Encounter: encounter ambulatory including pediatrics",
+        "children": [
+          {
+            "name": "DENOM.1.0.0",
+            "typecode": "DURING",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 1,
+        "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
+        "type": "event_list",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.2",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.pharyngitis_diagnosis_active",
+        "title": "Diagnosis active: pharyngitis",
+        "children": [
+          {
+            "name": "DENOM.2.0.0",
+            "typecode": "DURING",
+            "level": 2,
+            "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+            "children": [
+              {
+                "name": "DENOM.2.0.0.0.0",
+                "typecode": "DURING",
+                "level": 4,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "maxDepth": 0,
+                "type": "date_interval",
+                "num_merges": 0
+              }
+            ],
+            "maxDepth": 1,
+            "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
+            "type": "event_list",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 2,
+        "value": "measure.pharyngitis_diagnosis_active",
+        "type": "event_list",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.3",
+        "typecode": "PRCN",
+        "level": 0,
+        "children": [
+          {
+            "conj_code": "OR",
+            "name": "DENOM.3.0",
+            "typecode": "PRCN",
+            "level": 1,
+            "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+            "title": "Encounter: encounter ambulatory including pediatrics",
+            "children": [
+              {
+                "name": "DENOM.3.0.0.0",
+                "typecode": "DURING",
+                "level": 3,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "maxDepth": 0,
+                "type": "date_interval",
+                "num_merges": 0
+              }
+            ],
+            "maxDepth": 1,
+            "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
+            "type": "event_list",
+            "num_merges": 0
+          },
+          {
+            "name": "DENOM.3.1",
+            "typecode": "SBS",
+            "level": 1,
+            "high": {
+              "value": "3",
+              "unit": "days",
+              "inclusive": "true"
+            },
+            "children": [
+              {
+                "name": "n1",
+                "type": "event_list",
+                "level": "0",
+                "num_merges": "0",
+                "status": "emit",
+                "value": "measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active",
+                "oldnames": "DENOM.3.1.0,DENOM.3.1.1,DENOM.3.1.2",
+                "maxDepth": 0
+              }
+            ],
+            "maxDepth": 1,
+            "type": "unknown",
+            "num_merges": 3
+          }
+        ],
+        "maxDepth": 2,
+        "type": "unknown",
+        "num_merges": 0
+      }
+    ],
+    "maxDepth": 3,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "NUMER": {
+    "name": "NUMER",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "NUMER.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.group_a_streptococcus_test_laboratory_test_performed",
+        "title": "Laboratory test performed: Group A Streptococcus Test",
+        "children": [
+          {
+            "name": "NUMER.0.0.0",
+            "typecode": "EAS",
+            "level": 2,
+            "inversionInd": "*invert*",
+            "high": {
+              "value": "3",
+              "unit": "d",
+              "inclusive": "true"
+            },
+            "children": [
+              {
+                "conj_code": "AND",
+                "name": "NUMER.0.0.0.0",
+                "typecode": "PRCN",
+                "level": 3,
+                "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+                "title": "Encounter: encounter ambulatory including pediatrics",
+                "children": [
+                  {
+                    "name": "NUMER.0.0.0.0.0.0",
+                    "typecode": "DURING",
+                    "level": 5,
+                    "ph_id": "measurement_period",
+                    "title": "Measurement period",
+                    "maxDepth": 0,
+                    "type": "date_interval",
+                    "num_merges": 0
+                  }
+                ],
+                "maxDepth": 1,
+                "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
+                "type": "event_list",
+                "num_merges": 0
+              },
+              {
+                "name": "NUMER.0.0.0.1",
+                "typecode": "SBS",
+                "level": 3,
+                "high": {
+                  "value": "3",
+                  "unit": "days",
+                  "inclusive": "true"
+                },
+                "children": [
+                  {
+                    "name": "n2",
+                    "type": "event_list",
+                    "level": "0",
+                    "num_merges": "0",
+                    "status": "emit",
+                    "value": "measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active",
+                    "oldnames": "NUMER.0.0.0.1.0,NUMER.0.0.0.1.1,NUMER.0.0.0.1.2",
+                    "maxDepth": 0
+                  }
+                ],
+                "maxDepth": 1,
+                "type": "unknown",
+                "num_merges": 3
+              }
+            ],
+            "maxDepth": 2,
+            "type": "unknown",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 3,
+        "value": "measure.group_a_streptococcus_test_laboratory_test_performed",
+        "type": "event_list",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "NUMER.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.group_a_streptococcus_test_laboratory_test_performed",
+        "title": "Laboratory test performed: Group A Streptococcus Test",
+        "children": [
+          {
+            "name": "NUMER.1.0.0",
+            "typecode": "SAE",
+            "level": 2,
+            "high": {
+              "value": "3",
+              "unit": "d",
+              "inclusive": "true"
+            },
+            "children": [
+              {
+                "conj_code": "AND",
+                "name": "NUMER.1.0.0.0",
+                "typecode": "PRCN",
+                "level": 3,
+                "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+                "title": "Encounter: encounter ambulatory including pediatrics",
+                "children": [
+                  {
+                    "name": "NUMER.1.0.0.0.0.0",
+                    "typecode": "DURING",
+                    "level": 5,
+                    "ph_id": "measurement_period",
+                    "title": "Measurement period",
+                    "maxDepth": 0,
+                    "type": "date_interval",
+                    "num_merges": 0
+                  }
+                ],
+                "maxDepth": 1,
+                "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
+                "type": "event_list",
+                "num_merges": 0
+              },
+              {
+                "name": "NUMER.1.0.0.1",
+                "typecode": "SBS",
+                "level": 3,
+                "high": {
+                  "value": "3",
+                  "unit": "days",
+                  "inclusive": "true"
+                },
+                "children": [
+                  {
+                    "name": "n3",
+                    "type": "event_list",
+                    "level": "0",
+                    "num_merges": "0",
+                    "status": "emit",
+                    "value": "measure.pharyngitis_antibiotics_medication_dispensed,measure.pharyngitis_antibiotics_medication_order,measure.pharyngitis_antibiotics_medication_active",
+                    "oldnames": "NUMER.1.0.0.1.0,NUMER.1.0.0.1.1,NUMER.1.0.0.1.2",
+                    "maxDepth": 0
+                  }
+                ],
+                "maxDepth": 1,
+                "type": "unknown",
+                "num_merges": 3
+              }
+            ],
+            "maxDepth": 2,
+            "type": "unknown",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 3,
+        "value": "measure.group_a_streptococcus_test_laboratory_test_performed",
+        "type": "event_list",
+        "num_merges": 0
+      }
+    ],
+    "maxDepth": 4,
+    "type": "unknown",
+    "num_merges": 0
+  }
+}
