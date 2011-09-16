@@ -11,25 +11,31 @@ module HQMFParse
     @@templates = nil
     @@doc = nil
     @@measure = {}
-    @@relative_timings = Set.new(['SBS', 'SBE', 'EAS','SAE','DURING'])
+    @@relative_timings = Set.new(['SBS', 'SBE', 'EAS','SAE','SAS', 'DURING'])
     @@ids = {}
     def self.process_file(infile, outfile)
             STDOUT.puts "infile = #{infile} outfile = #{outfile}"
              @@templates = JSON.parse(File.open("hqmf_templates.json").read)
       #      STDOUT.puts JSON.pretty_generate(@@templates)
-             @@idinfp = File.open(infile + ".map.json","r")
-             STDOUT.puts "Map file should be in #{infile}.map.json -- #{@@idinfp}"
+      #       @@idinfp = File.open(infile + ".map.json","r")
+      #       STDOUT.puts "Map file should be in #{infile}.map.json -- #{@@idinfp}"
              @@doc = Nokogiri::XML(File.open(infile))
              @@doc.root.add_namespace_definition('rim', 'urn:hl7-org:v3')   
-            if File.exist?(infile + ".map.json")   # we have a map file
+             @@outfp = File.open(outfile + ".json","w")
+             @@ids = {}
+             @@measure = {}
+                if File.exist?(infile + ".map.json")   # we have a map file
                @@ids = JSON.parse(File.open(infile + ".map.json","r").read)
              else
              process_measure_attributes
              process_dataspec
-#             @@ids.each_key do |key|
-#               STDOUT.puts "key:#{key}  #{key.length} title:#{@@ids[key]['title']}"
- #            end
+            @@ids.each_key do |key|
+               STDOUT.puts "key:#{key} title:#{@@ids[key]['title']} entry:#{@@ids[key]["entry"]}"
+           end
              @@idoutfp = File.open(outfile + ".map.json","w")
+              @@ids.each_key do |key|
+                 STDOUT.puts "key:#{key} title:#{@@ids[key]['title']} entry:#{@@ids[key]["entry"]}"
+             end
              @@idoutfp.puts JSON.pretty_generate(@@ids)
              @@idoutfp.close
             end
@@ -39,7 +45,9 @@ module HQMFParse
              process_section(denom,"DENOM",outfile)
              numer = @@doc.xpath("//rim:entry/rim:observation/rim:value[@code='NUMER']")
              process_section(numer,"NUMER",outfile)
-             STDOUT.puts JSON.pretty_generate(@@measure)
+             exclusion = @@doc.xpath("//rim:entry/rim:observation/rim:value[@code='EXCLUSION']")
+             process_section(exclusion,"EXCLUSION",outfile)
+            @@outfp.puts JSON.pretty_generate(@@measure)
     end
      
 
@@ -51,9 +59,9 @@ module HQMFParse
    <value xsi:type="TS" value="00001231"/>
 </measureAttribute>
 =end
-    def self.addId(key, entry, title, template)
-      STDOUT.puts "adding key:#{key}  title:#{title} template:#{template}"
-      @@ids[key.strip] = {'entry' => entry, 'title' => title.strip, 'template' => template.strip, 'ph_id' => ""}
+    def self.addId(key, title, template)
+      STDOUT.puts "*** adding key:#{key}  title:#{title} template:#{template}"
+      @@ids[key.strip] = {'title' => title.strip, 'template' => template.strip, 'ph_id' => ""}
     end
     def self.process_measure_attributes
       attributes = @@doc.xpath("//rim:measureAttribute")
@@ -67,7 +75,7 @@ module HQMFParse
           display_string = attribute.at_xpath("./rim:code")['displayName']
           id_string = id['root']
           templateID_string = templateID['root']
-          addId(id_string, attribute, display_string, templateID_string)
+          addId(id_string, display_string, templateID_string)
         end
       end
     end
@@ -92,7 +100,7 @@ module HQMFParse
              id = entry.at_xpath("./*/rim:id")
              actualId = id['root']
              id_string = "id = #{actualId}"
-             addId(actualId, entry, title, template_id)
+             addId(actualId, title, template_id)
              
            end
         end
@@ -104,9 +112,13 @@ module HQMFParse
        # add ID of the section to the @@ids hash
       i = 0
       nextsectionName = ""
+      if !section.at_xpath("../rim:id")
+        STDOUT.puts "process_section #{text} failed -- section is nil"
+        return
+      end
       id_value = section.at_xpath("../rim:id")['root']
        title = section.at_xpath("../rim:value")['displayName']
-       addId(id_value, section, title, "")
+       addId(id_value, title, "")
       @@measure[text] = {'name' => text }
       @@measure[text]['children'] = []
        sourceOfs = section.xpath("../rim:sourceOf")
