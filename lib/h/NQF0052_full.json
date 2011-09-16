@@ -1,0 +1,209 @@
+{
+  "IPP": {
+    "name": "IPP",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n14",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.0.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "low": {
+              "value": "18",
+              "unit": "a",
+              "inclusive": "true"
+                                                                                    },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+                                                            }
+        ],
+        "maxDepth": 0,
+        "type": "date_single",
+        "status": "emitted",
+        "pattern": "datetiminginterval",
+        "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )",
+        "num_merges": 0
+                        },
+      {
+        "conj_code": "AND",
+        "name": "n15",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.1.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "high": {
+              "value": "49",
+              "unit": "a",
+              "inclusive": "true"
+                                                                                    },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+                                                            }
+        ],
+        "maxDepth": 0,
+        "type": "date_single",
+        "status": "emitted",
+        "pattern": "datetiminginterval",
+        "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 49, 0 a, none, true, true )",
+        "num_merges": 0
+                        }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+    },
+  "DENOM": {
+    "name": "DENOM",
+    "children": [
+      {
+        "name": "n23",
+        "oldnames": "n22,n18,n19,n20,n21",
+        "value": "normalize(n22, n18, n19, n20, n21)",
+        "type": "event_list",
+        "level": "0",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "merged_value_sets",
+        "maxDepth": 0
+                        },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.5",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "",
+        "title": "Initial Patient Population",
+        "maxDepth": 0,
+        "type": "ignore",
+        "num_merges": 0
+                        },
+      {
+        "conj_code": "AND",
+        "subs_code": "FIRST",
+        "name": "n16",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_low_back_pain",
+        "title": "Diagnosis active: low back pain",
+        "children": [
+          {
+            "name": "DENOM.6.0.0",
+            "typecode": "DURING",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+                                                            }
+        ],
+        "maxDepth": 0,
+        "value": "eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end)",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlistduringinterval"
+                        },
+      {
+        "conj_code": "AND",
+        "name": "n17",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.encounter_ambulatory_including_orthopedics_and_chiropractics",
+        "title": "Encounter: Encounter ambulatory including orthopedics and chiropractics",
+        "children": [
+          {
+            "name": "DENOM.7.0.0",
+            "typecode": "DURING",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+                                                            }
+        ],
+        "maxDepth": 0,
+        "value": "eventsDuring(measure.encounter_ambulatory_including_orthopedics_and_chiropractics, measurement_period.start, measurement_period.end)",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlistduringinterval"
+                        }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+    },
+  "NUMER": {
+    "name": "NUMER",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n25",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnostic_study_performed_imaging_study_spinal",
+        "title": "Diagnostic study performed: Imaging Study-Spinal",
+        "children": [
+          {
+            "subs_code": "FIRST",
+            "name": "n24",
+            "typecode": "SAS",
+            "level": 2,
+            "ph_id": "measure.diagnosis_low_back_pain",
+            "children": [
+              {
+                "name": "NUMER.0.0.0.0.0",
+                "typecode": "DURING",
+                "level": 4,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "high": {
+                  "value": "28",
+                  "unit": "d",
+                  "inclusive": "true"
+                                                                                                                                                },
+                "maxDepth": 0,
+                "type": "date_interval",
+                "num_merges": 0
+                                                                                                                }
+            ],
+            "maxDepth": 0,
+            "value": "eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end)",
+            "type": "event_list",
+            "num_merges": 0,
+            "status": "emitted",
+            "pattern": "eventlistduringinterval"
+                                                            }
+        ],
+        "maxDepth": 0,
+        "value": "FIRST( eventsTimingEvents(measure.diagnostic_study_performed_imaging_study_spinal, n24, false, SAS, 0,0, none, none, true, true) )",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlisttimingeventlistflat"
+                        }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+    }
+}

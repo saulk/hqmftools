@@ -4,7 +4,7 @@
     "children": [
       {
         "conj_code": "AND",
-        "name": "n26",
+        "name": "n1",
         "typecode": "PRCN",
         "level": 0,
         "ph_id": "birthdate",
@@ -35,7 +35,7 @@
                         },
       {
         "conj_code": "AND",
-        "name": "n27",
+        "name": "n2",
         "typecode": "PRCN",
         "level": 0,
         "ph_id": "birthdate",
@@ -85,7 +85,7 @@
                         },
       {
         "conj_code": "AND",
-        "name": "n29",
+        "name": "n4",
         "typecode": "PRCN",
         "level": 0,
         "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
@@ -147,13 +147,13 @@
                         },
       {
         "conj_code": "AND",
-        "name": "n30",
+        "name": "n5",
         "typecode": "PRCN",
         "level": 0,
         "children": [
           {
             "conj_code": "OR",
-            "name": "n29",
+            "name": "n4",
             "typecode": "PRCN",
             "level": 1,
             "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
@@ -188,7 +188,7 @@
                                                                                     },
             "children": [
               {
-                "name": "n28",
+                "name": "n3",
                 "oldnames": "DENOM.3.1.0,DENOM.3.1.1,DENOM.3.1.2",
                 "value": "normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)",
                 "type": "event_list",
@@ -209,7 +209,7 @@
         "num_merges": 0,
         "status": "emitted",
         "pattern": "eventlisttimingeventlist",
-        "value": "eventsTimingEvents(n29, n28, SBS, 3,0, days, d, true, true)"
+        "value": "eventsTimingEvents(n4, n3, SBS, 3,0, days, d, true, true)"
                         }
     ],
     "maxDepth": 3,
@@ -221,14 +221,14 @@
     "children": [
       {
         "conj_code": "AND",
-        "name": "n34",
+        "name": "n9",
         "typecode": "PRCN",
         "level": 0,
         "ph_id": "measure.group_a_streptococcus_test_laboratory_test_performed",
         "title": "Laboratory test performed: Group A Streptococcus Test",
         "children": [
           {
-            "name": "n33",
+            "name": "n8",
             "typecode": "EAS",
             "level": 2,
             "inversionInd": "*invert*",
@@ -240,7 +240,7 @@
             "children": [
               {
                 "conj_code": "AND",
-                "name": "n32",
+                "name": "n7",
                 "typecode": "PRCN",
                 "level": 3,
                 "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
@@ -275,7 +275,7 @@
                                                                                                                                                 },
                 "children": [
                   {
-                    "name": "n31",
+                    "name": "n6",
                     "oldnames": "NUMER.0.0.0.1.0,NUMER.0.0.0.1.1,NUMER.0.0.0.1.2",
                     "value": "normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)",
                     "type": "event_list",
@@ -296,11 +296,11 @@
             "num_merges": 0,
             "status": "emitted",
             "pattern": "eventlisttimingeventlist",
-            "value": "eventsTimingEvents(n32, n31, SBS, 3,0, days, d, true, true)"
+            "value": "eventsTimingEvents(n7, n6, SBS, 3,0, days, d, true, true)"
                                                             }
         ],
         "maxDepth": 0,
-        "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, true, EAS, 3,0, d, none, true, true)",
+        "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n8, true, EAS, 3,0, d, none, true, true)",
         "type": "event_list",
         "num_merges": 0,
         "status": "emitted",
@@ -308,14 +308,14 @@
                         },
       {
         "conj_code": "AND",
-        "name": "n35",
+        "name": "n10",
         "typecode": "PRCN",
         "level": 0,
         "ph_id": "measure.group_a_streptococcus_test_laboratory_test_performed",
         "title": "Laboratory test performed: Group A Streptococcus Test",
         "children": [
           {
-            "name": "n33",
+            "name": "n8",
             "typecode": "SAE",
             "level": 2,
             "high": {
@@ -326,7 +326,7 @@
             "children": [
               {
                 "conj_code": "AND",
-                "name": "n32",
+                "name": "n7",
                 "typecode": "PRCN",
                 "level": 3,
                 "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
@@ -361,7 +361,7 @@
                                                                                                                                                 },
                 "children": [
                   {
-                    "name": "n31",
+                    "name": "n6",
                     "oldnames": "NUMER.1.0.0.1.0,NUMER.1.0.0.1.1,NUMER.1.0.0.1.2",
                     "value": "normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)",
                     "type": "event_list",
@@ -382,15 +382,77 @@
             "num_merges": 0,
             "status": "emitted",
             "pattern": "eventlisttimingeventlist",
-            "value": "eventsTimingEvents(n32, n31, SBS, 3,0, days, d, true, true)"
+            "value": "eventsTimingEvents(n7, n6, SBS, 3,0, days, d, true, true)"
                                                             }
         ],
         "maxDepth": 0,
-        "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, false, SAE, 3,0, d, none, true, true)",
+        "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n8, false, SAE, 3,0, d, none, true, true)",
         "type": "event_list",
         "num_merges": 0,
         "status": "emitted",
         "pattern": "eventlisttimingeventlistflat"
+                        }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+    },
+  "EXCLUSION": {
+    "name": "EXCLUSION",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n13",
+        "typecode": "PRCN",
+        "level": 0,
+        "children": [
+          {
+            "name": "n12",
+            "oldnames": "EXCLUSION.0.0,EXCLUSION.0.1,EXCLUSION.0.2",
+            "value": "normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)",
+            "type": "event_list",
+            "level": "0",
+            "num_merges": "0",
+            "status": "emitted",
+            "pattern": "merged_value_sets",
+            "maxDepth": 0
+                                                            },
+          {
+            "name": "n11",
+            "typecode": "SBS",
+            "level": 1,
+            "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter",
+            "high": {
+              "value": "30",
+              "unit": "days",
+              "inclusive": "true"
+                                                                                    },
+            "children": [
+              {
+                "name": "EXCLUSION.0.3.0.0",
+                "typecode": "DURING",
+                "level": 3,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "maxDepth": 0,
+                "type": "date_interval",
+                "num_merges": 0
+                                                                                                                }
+            ],
+            "maxDepth": 0,
+            "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
+            "type": "event_list",
+            "num_merges": 0,
+            "status": "emitted",
+            "pattern": "eventlistduringinterval"
+                                                            }
+        ],
+        "maxDepth": 0,
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlisttimingeventlistsibling",
+        "value": "eventsTimingEvents(n12, n11, SBS, 30,0, days, d, true, true)"
                         }
     ],
     "maxDepth": 1,

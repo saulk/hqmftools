@@ -1,0 +1,24 @@
+#*** Code for IPP
+IPP{
+n14 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )
+n15 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 49, 0 a, none, true, true )
+return(n14 AND n15 )
+}
+#*** Code for DENOM
+DENOM{
+n16 = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end)
+n17 = eventsDuring(measure.encounter_ambulatory_including_orthopedics_and_chiropractics, measurement_period.start, measurement_period.end)
+n18 = eventsTimingEvents(measure.diagnosis_active_cancer, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+n19 = eventsTimingEvents(measure.diagnosis_active_trauma, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+n20 = eventsTimingEvents(measure.diagnosis_active_iv_drug_abuse, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+n21 = eventsTimingEvents(measure.diagnosis_active_neurologic_impairment, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+n22 = FIRST( eventsTimingEvents(measure.diagnosis_low_back_pain, n16, false, SBS, 0,0, none, none, true, true) )
+n23 = normalize(n22, n18, n19, n20, n21)
+return(n23 AND n16 AND n17 )
+}
+#*** Code for NUMER
+NUMER{
+n24 = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end)
+n25 = FIRST( eventsTimingEvents(measure.diagnostic_study_performed_imaging_study_spinal, n24, false, SAS, 0,0, none, none, true, true) )
+return(n25 )
+}

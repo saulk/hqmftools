@@ -1,28 +1,22 @@
 #*** Code for IPP
 IPP{
-n1 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true )
-n2 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )
-return(n1 AND n2 )
+n26 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true )
+n27 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )
+return(n26 AND n27 )
 }
 #*** Code for DENOM
 DENOM{
-n4 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n5 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n6 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n3 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
-n7 = eventsDuringEvents(measure.pharyngitis_diagnosis_active, n5)
-n8 = eventsTimingEvents(n6, n3, SBS, 3,0, days, d, true, true)
-return(n4 AND n7 AND n8 )
+n29 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
+n28 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
+n30 = eventsTimingEvents(n29, n28, SBS, 3,0, days, d, true, true)
+return(n29 AND n30 )
 }
 #*** Code for NUMER
 NUMER{
-n11 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n9 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
-n12 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n10 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
-n13 = eventsTimingEvents(n11, n9, SBS, 3,0, days, d, true, true)
-n14 = eventsTimingEvents(n12, n10, SBS, 3,0, days, d, true, true)
-n15 = eventsTimingEvents(n13, measure.group_a_streptococcus_test_laboratory_test_performed, EAS, 3,0, d, none, true, true)
-n16 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n14, SAE, 3,0, d, none, true, true)
-return(n15 AND n16 )
+n32 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
+n31 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
+n33 = eventsTimingEvents(n32, n31, SBS, 3,0, days, d, true, true)
+n34 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, true, EAS, 3,0, d, none, true, true)
+n35 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, false, SAE, 3,0, d, none, true, true)
+return(n34 AND n35 )
 }
