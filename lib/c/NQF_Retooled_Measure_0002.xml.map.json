@@ -1,0 +1,62 @@
+{
+  "D578142D-F78F-4BF4-8194-82015DE21A7F": {
+    "entry": "<measureAttribute>\n         <templateId root=\"2.16.840.1.113883.3.560.1.74\"/>\n         <id root=\"D578142D-F78F-4BF4-8194-82015DE21A7F\"/>\n         <code code=\"MSRTP\" displayName=\"Measurement period\" codeSystem=\"2.16.840.1.113883.3.560\"/>\n         <value xsi:type=\"EXPR_PQ\" value=\"12\" unit=\"m\">\n            <expression mediaType=\"text/plain\">measureEndDate - measureStartDate</expression>\n         </value>\n      </measureAttribute>",
+    "title": "Measurement period",
+    "template": "2.16.840.1.113883.3.560.1.74",
+    "ph_id": "measurement_period"
+  },
+  "30235563-1758-4C31-9172-0CF34BEF23D6": {
+    "entry": "<measureAttribute>\n         <templateId root=\"2.16.840.1.113883.3.560.1.75\"/>\n         <id root=\"30235563-1758-4C31-9172-0CF34BEF23D6\"/>\n         <code code=\"MSRSD\" displayName=\"Measurement start date\" codeSystem=\"2.16.840.1.113883.3.560\"/>\n         <value xsi:type=\"TS\" value=\"00000101\"/>\n      </measureAttribute>",
+    "title": "Measurement start date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period_start"
+  },
+  "6921326D-5B7C-4294-91C1-2789EDF323BF": {
+    "entry": "<measureAttribute>\n         <templateId root=\"2.16.840.1.113883.3.560.1.75\"/>\n         <id root=\"6921326D-5B7C-4294-91C1-2789EDF323BF\"/>\n         <code code=\"MSRED\" displayName=\"Measurement end date\" codeSystem=\"2.16.840.1.113883.3.560\"/>\n         <value xsi:type=\"TS\" value=\"00001231\"/>\n      </measureAttribute>",
+    "title": "Measurement end date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period_end"
+  },
+  "CC73216C-43BF-4D10-96A6-E6DDBD8AC394": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- patient characteristic pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.25\"/>\n               <id root=\"CC73216C-43BF-4D10-96A6-E6DDBD8AC394\"/>\n               <code code=\"45970-1\" displayName=\"Demographics\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <observation classCode=\"OBS\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <code code=\"2.16.840.1.113883.3.464.0001.14\" displayName=\"birth date HL7 Code List\"/>\n                     <title>Patient characteristic: birth date</title>\n                  </observation>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Patient characteristic: birth date",
+    "template": "2.16.840.1.113883.3.560.1.25",
+	    "ph_id": "birthdate"
+  },
+  "CA71325F-084A-4F5A-9214-229D925F836D": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- encounter pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.4\"/>\n               <id root=\"CA71325F-084A-4F5A-9214-229D925F836D\"/>\n               <code code=\"46240-8\" displayName=\"Encounter list\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <encounter classCode=\"ENC\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <code code=\"2.16.840.1.113883.3.464.0001.231\" displayName=\"encounter ambulatory including pediatrics Code List GROUPING\"/>\n                     <title>Encounter: encounter ambulatory including pediatrics</title>\n                  </encounter>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Encounter: encounter ambulatory including pediatrics",
+    "template": "2.16.840.1.113883.3.560.1.4",
+    "ph_id": "measure.encounter_ambulatory_including_pediatrics_encounter"
+  },
+  "AF9EE784-50CF-413F-9082-41A3330511A1": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- laboratory test performed pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.5\"/>\n               <id root=\"AF9EE784-50CF-413F-9082-41A3330511A1\"/>\n               <code code=\"30954-2\" displayName=\"Results\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <observation classCode=\"OBS\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <code code=\"2.16.840.1.113883.3.464.0001.250\" displayName=\"Group A Streptococcus Test Code List GROUPING\"/>\n                     <title>Laboratory test performed: Group A Streptococcus Test</title>\n                     <statusCode code=\"completed\"/>\n                  </observation>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Laboratory test performed: Group A Streptococcus Test",
+    "template": "2.16.840.1.113883.3.560.1.5",
+    "ph_id": "measure.group_a_streptococcus_test_laboratory_test_performed"
+  },
+  "F33D9CE9-A084-4BA1-AB0E-1CBEF3934C88": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- diagnosis active pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.2\"/>\n               <id root=\"F33D9CE9-A084-4BA1-AB0E-1CBEF3934C88\"/>\n               <code code=\"11450-4\" displayName=\"Problem\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <observation classCode=\"OBS\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <code code=\"55607006\" codeSystem=\"2.16.840.1.113883.6.96\" displayName=\"Problem\"/>\n                     <title>Diagnosis active: pharyngitis</title>\n                     <value xsi:type=\"CD\" code=\"2.16.840.1.113883.3.464.0001.369\" displayName=\"pharyngitis Code List GROUPING\"/>\n                     <sourceOf typeCode=\"REFR\">\n                        <observation classCode=\"OBS\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                           <code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Status\"/>\n                           <value xsi:type=\"CD\" code=\"55561003\" displayName=\"active\" codeSystem=\"2.16.840.1.113883.6.96\"/>\n                        </observation>\n                     </sourceOf>\n                  </observation>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Diagnosis active: pharyngitis",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.pharyngitis_diagnosis_active"
+  },
+  "6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- medication active pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.13\"/>\n               <id root=\"6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4\"/>\n               <code code=\"10160-0\" displayName=\"Medications\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <substanceAdministration classCode=\"SBADM\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <title>Medication active: pharyngitis antibiotics</title>\n                     <participant typeCode=\"CSM\">\n                        <roleParticipant classCode=\"MANU\">\n                           <playingMaterial classCode=\"MMAT\" determinerCode=\"KIND\">\n                              <code code=\"2.16.840.1.113883.3.464.0001.373\" displayName=\"pharyngitis antibiotics Code List GROUPING\"/>\n                           </playingMaterial>\n                        </roleParticipant>\n                     </participant>\n                     <sourceOf typeCode=\"REFR\">\n                        <observation classCode=\"OBS\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                           <code code=\"33999-4\" displayName=\"Status\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n                           <value xsi:type=\"CD\" code=\"55561003\" displayName=\"Active\" codeSystem=\"2.16.840.1.113883.6.96\"/>\n                        </observation>\n                     </sourceOf>\n                  </substanceAdministration>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Medication active: pharyngitis antibiotics",
+    "template": "2.16.840.1.113883.3.560.1.13",
+    "ph_id": "measure.pharyngitis_antibiotics_medication_active"
+  },
+  "C5239EC0-B769-476F-B79E-6927ED720A03": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- medication dispensed pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.8\"/>\n               <id root=\"C5239EC0-B769-476F-B79E-6927ED720A03\"/>\n               <code code=\"10160-0\" displayName=\"Medications\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <supply classCode=\"SPLY\" moodCode=\"EVN\" isCriterionInd=\"true\">\n                     <title>Medication dispensed: pharyngitis antibiotics</title>\n                     <participant typeCode=\"CSM\">\n                        <roleParticipant classCode=\"MANU\">\n                           <playingMaterial classCode=\"MMAT\" determinerCode=\"KIND\">\n                              <code code=\"2.16.840.1.113883.3.464.0001.373\" displayName=\"pharyngitis antibiotics Code List GROUPING\"/>\n                           </playingMaterial>\n                        </roleParticipant>\n                     </participant>\n                  </supply>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Medication dispensed: pharyngitis antibiotics",
+    "template": "2.16.840.1.113883.3.560.1.8",
+    "ph_id": "measure.pharyngitis_antibiotics_medication_dispensed"
+  },
+  "B2EC949E-E9FD-4184-941E-F1F73470CB21": {
+    "entry": "<entry typeCode=\"DRIV\">\n            <act classCode=\"ACT\" moodCode=\"EVN\" isCriterionInd=\"true\"><!-- medication order pattern -->\n               <templateId root=\"2.16.840.1.113883.3.560.1.17\"/>\n               <id root=\"B2EC949E-E9FD-4184-941E-F1F73470CB21\"/>\n               <code code=\"10160-0\" displayName=\"Medications\" codeSystem=\"2.16.840.1.113883.6.1\"/>\n               <sourceOf typeCode=\"COMP\">\n                  <substanceAdministration classCode=\"SBADM\" moodCode=\"RQO\" isCriterionInd=\"true\">\n                     <title>Medication order: pharyngitis antibiotics</title>\n                     <participant typeCode=\"CSM\">\n                        <roleParticipant classCode=\"MANU\">\n                           <playingMaterial classCode=\"MMAT\" determinerCode=\"KIND\">\n                              <code code=\"2.16.840.1.113883.3.464.0001.373\" displayName=\"pharyngitis antibiotics Code List GROUPING\"/>\n                           </playingMaterial>\n                        </roleParticipant>\n                     </participant>\n                  </substanceAdministration>\n               </sourceOf>\n            </act>\n         </entry>",
+    "title": "Medication order: pharyngitis antibiotics",
+    "template": "2.16.840.1.113883.3.560.1.17",
+    "ph_id": "measure.pharyngitis_antibiotics_medication_order"
+  }
+}

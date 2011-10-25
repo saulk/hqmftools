@@ -1,0 +1,37 @@
+{
+  "F8D5AD22-F49E-4181-B886-E5B12BEA8966": {
+    "title": "Measurement period",
+    "template": "2.16.840.1.113883.3.560.1.74",
+    "ph_id": ""
+  },
+  "526506A5-8B25-4835-9A4F-E9C708B213DC": {
+    "title": "Measurement start date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": ""
+  },
+  "F8D5AD22-F49E-4181-B886-E5B12BEA8966e": {
+    "title": "Measurement end date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": ""
+  },
+  "52A541D7-9C22-4633-8AEC-389611894672": {
+    "title": "Patient characteristic: birth date",
+    "template": "2.16.840.1.113883.3.560.1.25",
+    "ph_id": ""
+  },
+  "3CF573A8-34AE-408E-88D7-26A1016A140D": {
+    "title": "Encounter: encounter outpatient",
+    "template": "2.16.840.1.113883.3.560.1.4",
+    "ph_id": ""
+  },
+  "482902EC-E214-4FB4-8C5A-85A41250573C": {
+    "title": "Procedure performed: Pneumococcal Vaccination all ages",
+    "template": "2.16.840.1.113883.3.560.1.6",
+    "ph_id": ""
+  },
+  "10165EC8-53EE-4242-A20D-B1D21CE0DC73": {
+    "title": "Medication administered: Pneumococcal Vaccine all ages",
+    "template": "2.16.840.1.113883.3.560.1.14",
+    "ph_id": ""
+  }
+}

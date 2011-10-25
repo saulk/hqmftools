@@ -24,6 +24,5 @@ return(n9 AND n10 )
 EXCLUSION{
 n11 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
 n12 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
-n13 = eventsTimingEvents(n12, n11, SBS, 30,0, days, d, true, true)
-return(n13 )
+return( )
 }

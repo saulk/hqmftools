@@ -1,0 +1,308 @@
+{
+  "IPP": {
+    "name": "IPP",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n39",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.0.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "low": {
+              "value": "41",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "high": {
+              "value": "68",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "type": "date_single",
+        "status": "emitted",
+        "pattern": "datetiminginterval",
+        "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 41, 0 a, none, true, true )",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "IPP.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "gender_female",
+        "title": "Patient characteristic: Gender Female",
+        "children": null,
+        "maxDepth": 0,
+        "type": "unknown",
+        "num_merges": 0
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "DENOM": {
+    "name": "DENOM",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "DENOM.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "",
+        "title": "Initial Patient Population",
+        "maxDepth": 0,
+        "type": "ignore",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "n40",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.encounter_encounter_outpatient",
+        "title": "Encounter: encounter outpatient",
+        "children": [
+          {
+            "name": "DENOM.1.0.0",
+            "typecode": "EAS",
+            "level": 2,
+            "inversionInd": "*invert*",
+            "ph_id": "measurement_period.end",
+            "title": "Measurement end date",
+            "high": {
+              "value": "2",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_single",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "value": "eventsTimingEvents(measure.encounter_encounter_outpatient, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlisttimingeventlist"
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "NUMER": {
+    "name": "NUMER",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n41",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnostic_study_performed_breast_cancer_screening",
+        "title": "Diagnostic study performed: breast cancer screening",
+        "children": [
+          {
+            "name": "NUMER.0.0.0",
+            "typecode": "EAS",
+            "level": 2,
+            "inversionInd": "*invert*",
+            "ph_id": "measurement_period.end",
+            "title": "Measurement end date",
+            "high": {
+              "value": "2",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_single",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "value": "eventsTimingEvents(measure.diagnostic_study_performed_breast_cancer_screening, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlisttimingeventlist"
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "EXCLUSION": {
+    "name": "EXCLUSION",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "EXCLUSION.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "children": [
+          {
+            "conj_code": "OR",
+            "name": "EXCLUSION.0.0",
+            "typecode": "PRCN",
+            "level": 1,
+            "ph_id": "measure.procedure_performed_bilateral_mastectomy",
+            "title": "Procedure performed: bilateral mastectomy",
+            "children": null,
+            "maxDepth": 0,
+            "value": "measure.procedure_performed_bilateral_mastectomy",
+            "type": "event_list",
+            "num_merges": 1
+          },
+          {
+            "conj_code": "OR",
+            "name": "EXCLUSION.0.1",
+            "typecode": "PRCN",
+            "level": 1,
+            "children": [
+              {
+                "conj_code": "AND",
+                "name": "EXCLUSION.0.1.0",
+                "typecode": "PRCN",
+                "level": 2,
+                "ph_id": "measure.procedure_performed_unilateral_mastectomy_CPT",
+                "title": "Procedure performed: unilateral mastectomy CPT",
+                "children": null,
+                "maxDepth": 0,
+                "value": "measure.procedure_performed_unilateral_mastectomy_CPT",
+                "type": "event_list",
+                "num_merges": 0
+              },
+              {
+                "conj_code": "AND",
+                "name": "EXCLUSION.0.1.1",
+                "typecode": "PRCN",
+                "level": 2,
+                "ph_id": "measure.procedure_performed_bilateral_mastectomy_modifier",
+                "title": "Procedure performed: bilateral mastectomy modifier",
+                "children": null,
+                "maxDepth": 0,
+                "value": "measure.procedure_performed_bilateral_mastectomy_modifier",
+                "type": "event_list",
+                "num_merges": 0
+              }
+            ],
+            "maxDepth": 1,
+            "type": "unknown",
+            "num_merges": 0
+          },
+          {
+            "conj_code": "OR",
+            "name": "EXCLUSION.0.2",
+            "typecode": "PRCN",
+            "level": 1,
+            "children": [
+              {
+                "conj_code": "AND",
+                "name": "EXCLUSION.0.2.0",
+                "typecode": "PRCN",
+                "level": 2,
+                "repeatNumber": {
+                  "low": {
+                    "value": "1",
+                    "inclusive": "false"
+                  }
+                },
+                "children": [
+                  {
+                    "conj_code": "AND",
+                    "name": "EXCLUSION.0.2.0.0",
+                    "typecode": "PRCN",
+                    "level": 3,
+                    "ph_id": "measure.procedure_performed_unilateral_mastectomy",
+                    "title": "Procedure performed: unilateral mastectomy",
+                    "children": null,
+                    "maxDepth": 0,
+                    "value": "measure.procedure_performed_unilateral_mastectomy",
+                    "type": "event_list",
+                    "num_merges": 0
+                  }
+                ],
+                "maxDepth": 1,
+                "type": "unknown",
+                "num_merges": 0
+              },
+              {
+                "conj_code": "AND",
+                "name": "EXCLUSION.0.2.1",
+                "typecode": "PRCN",
+                "level": 2,
+                "children": [
+                  {
+                    "conj_code": "AND",
+                    "subs_code": "FIRST",
+                    "name": "EXCLUSION.0.2.1.0",
+                    "typecode": "PRCN",
+                    "level": 3,
+                    "ph_id": "measure.procedure_performed_unilateral_mastectomy",
+                    "title": "Procedure performed: unilateral mastectomy",
+                    "children": [
+                      {
+                        "subs_code": "SECOND",
+                        "name": "EXCLUSION.0.2.1.0.0.0",
+                        "typecode": "CONCURRENT",
+                        "level": 5,
+                        "ph_id": "measure.procedure_performed_unilateral_mastectomy",
+                        "children": null,
+                        "maxDepth": 0,
+                        "value": "measure.procedure_performed_unilateral_mastectomy",
+                        "type": "event_list",
+                        "num_merges": 0
+                      }
+                    ],
+                    "maxDepth": 1,
+                    "value": "measure.procedure_performed_unilateral_mastectomy",
+                    "type": "event_list",
+                    "num_merges": 0
+                  }
+                ],
+                "maxDepth": 2,
+                "type": "unknown",
+                "num_merges": 0
+              }
+            ],
+            "maxDepth": 3,
+            "type": "unknown",
+            "num_merges": 0
+          },
+          {
+            "name": "EXCLUSION.0.3",
+            "typecode": "EAS",
+            "level": 1,
+            "inversionInd": "*invert*",
+            "ph_id": "measurement_period.end",
+            "title": "Measurement end date",
+            "maxDepth": 0,
+            "type": "date_single",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 4,
+        "type": "unknown",
+        "num_merges": 1
+      }
+    ],
+    "maxDepth": 5,
+    "type": "unknown",
+    "num_merges": 1
+  }
+}

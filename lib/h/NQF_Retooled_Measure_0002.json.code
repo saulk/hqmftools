@@ -1,22 +1,22 @@
 #*** Code for IPP
 IPP{
-n26 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true )
-n27 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )
-return(n26 AND n27 )
+n29 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true )
+n30 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )
+return(n29 AND n30 )
 }
 #*** Code for DENOM
 DENOM{
-n29 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
-n28 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
-n30 = eventsTimingEvents(n29, n28, SBS, 3,0, days, d, true, true)
-return(n29 AND n30 )
-}
-#*** Code for NUMER
-NUMER{
 n32 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
 n31 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
 n33 = eventsTimingEvents(n32, n31, SBS, 3,0, days, d, true, true)
-n34 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, true, EAS, 3,0, d, none, true, true)
-n35 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n33, false, SAE, 3,0, d, none, true, true)
-return(n34 AND n35 )
+return(n32 AND n33 )
+}
+#*** Code for NUMER
+NUMER{
+n35 = eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)
+n34 = normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)
+n36 = eventsTimingEvents(n35, n34, SBS, 3,0, days, d, true, true)
+n37 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n36, true, EAS, 3,0, d, none, true, true)
+n38 = eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n36, false, SAE, 3,0, d, none, true, true)
+return(n37 AND n38 )
 }

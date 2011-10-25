@@ -1,0 +1,152 @@
+infile = g/NQF_Retooled_Measure_0031.xml.json outfile = h/NQF_Retooled_Measure_0031.xml.json
+***Processing section IPP
+Single child...typcode = SBS
+Single child...typcode = COMP
+Single child...typcode = COMP
+section 
+IPP.0
+section birthdate
+IPP.0.0.0
+section measurement_period
+IPP.1
+section gender_female
+mergedatetiminginterval -- section IPP.0 depth = 1 title Patient characteristic: birth date ph_id = birthdate
+emitCode n39 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 41, 0 a, none, true, true ) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = date_single  typecode = PRCN
+   echild type = unknown  typecode = PRCN
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = date_single  typecode = PRCN
+   echild type = unknown  typecode = PRCN
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+***End of loop...@@change = false
+***Processing section DENOM
+Single child...typcode = EAS
+Single child...typcode = COMP
+section 
+DENOM.0
+section 
+DENOM.1
+section measure.encounter_encounter_outpatient
+DENOM.1.0.0
+section measurement_period.end
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 0 title Initial Patient Population ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title Encounter: encounter outpatient ph_id = measure.encounter_encounter_outpatient
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 2 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 0 title Initial Patient Population ph_id = 
+mergeEventListTimingInterval -- section depth = 1 title Encounter: encounter outpatient ph_id = measure.encounter_encounter_outpatient
+$$$ section type = event_list sectiontypecode = PRCN  childtypecode = EAS
+mergeEventListTimingInterval -- section depth = 1 title Encounter: encounter outpatient ph_id = measure.encounter_encounter_outpatient
+emitCode n40 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.encounter_encounter_outpatient, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = ignore  typecode = PRCN
+   echild type = event_list  typecode = PRCN
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+***End of loop...@@change = false
+***Processing section NUMER
+Single child...typcode = EAS
+Single child...typcode = COMP
+Single child...typcode = PRCN
+section 
+NUMER.0
+section measure.diagnostic_study_performed_breast_cancer_screening
+NUMER.0.0.0
+section measurement_period.end
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnostic study performed: breast cancer screening ph_id = measure.diagnostic_study_performed_breast_cancer_screening
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 2 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 1 title Diagnostic study performed: breast cancer screening ph_id = measure.diagnostic_study_performed_breast_cancer_screening
+$$$ section type = event_list sectiontypecode = PRCN  childtypecode = EAS
+mergeEventListTimingInterval -- section depth = 1 title Diagnostic study performed: breast cancer screening ph_id = measure.diagnostic_study_performed_breast_cancer_screening
+emitCode n41 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnostic_study_performed_breast_cancer_screening, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+mergeEventListTimingEventListFlat -- section NUMER  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode =   childtypecode = PRCN
+mergeEventListTimingEventListFlat -- section NUMER  typecode 
+***End of loop...@@change = false
+***Processing section EXCLUSION
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = PRCN
+Single child...typcode = COMP
+Single child...typcode = CONCURRENT
+Single child...typcode = COMP
+Single child...typcode = PRCN
+Single child...typcode = PRCN
+section 
+EXCLUSION.0
+section 
+EXCLUSION.0.0
+section measure.procedure_performed_bilateral_mastectomy
+EXCLUSION.0.1
+section 
+EXCLUSION.0.1.0
+section measure.procedure_performed_unilateral_mastectomy_CPT
+EXCLUSION.0.1.1
+section measure.procedure_performed_bilateral_mastectomy_modifier
+EXCLUSION.0.2
+section 
+EXCLUSION.0.2.0
+section 
+EXCLUSION.0.2.0.0
+section measure.procedure_performed_unilateral_mastectomy
+EXCLUSION.0.2.1
+section 
+EXCLUSION.0.2.1.0
+section measure.procedure_performed_unilateral_mastectomy
+EXCLUSION.0.2.1.0.0.0
+section measure.procedure_performed_unilateral_mastectomy
+EXCLUSION.0.3
+section measurement_period.end
+mergeEventListDuringIntervalFlat -- section depth = 5 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 4 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 0 title Procedure performed: bilateral mastectomy ph_id = measure.procedure_performed_bilateral_mastectomy
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = event_list  typecode = PRCN
+   echild type = event_list  typecode = PRCN
+mergeEventListDuringIntervalFlat -- section depth = 3 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title Procedure performed: unilateral mastectomy ph_id = measure.procedure_performed_unilateral_mastectomy
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 0 title Measurement end date ph_id = measurement_period.end
+mergeEventListTimingInterval -- section depth = 5 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 4 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 0 title Procedure performed: bilateral mastectomy ph_id = measure.procedure_performed_bilateral_mastectomy
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingInterval -- section depth = 3 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode = PRCN  childtypecode = PRCN
+mergeEventListTimingInterval -- section depth = 2 title  ph_id = 
+mergeEventListTimingInterval -- section depth = 1 title Procedure performed: unilateral mastectomy ph_id = measure.procedure_performed_unilateral_mastectomy
+$$$ section type = event_list sectiontypecode = PRCN  childtypecode = CONCURRENT
+mergeEventListTimingInterval -- section depth = 0 title Measurement end date ph_id = measurement_period.end
+mergeEventListTimingEventList -- section EXCLUSION.0.2.1 depth = 2 title  ph_id = 
+mergeEventListTimingEventListFlat -- section EXCLUSION.0.1  typecode PRCN
+mergeEventListTimingEventListFlat -- section EXCLUSION.0.2.0  typecode PRCN
+mergeEventListTimingEventListFlat -- section EXCLUSION.0.2.1.0  typecode PRCN
+***End of loop...@@change = false

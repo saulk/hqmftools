@@ -1,0 +1,57 @@
+{
+  "2D5FABBA-10BE-4289-B203-66FED7118394": {
+    "title": "Measurement period",
+    "template": "2.16.840.1.113883.3.560.1.74",
+    "ph_id": "measurement_period"
+  },
+  "E9409DA5-50B2-4152-A281-58AE57048F42": {
+    "title": "Measurement start date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period.start"
+  },
+  "CF027808-5B6D-4011-9603-93B95E59CB4B": {
+    "title": "Measurement end date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period.end"
+  },
+  "D484D744-BB90-45C9-8935-6CFF152DFCE1": {
+    "title": "Procedure performed: bilateral mastectomy",
+    "template": "2.16.840.1.113883.3.560.1.6",
+    "ph_id": "measure.procedure_performed_bilateral_mastectomy"
+  },
+  "D61DE20A-9B44-4965-A39B-B6F094138C94": {
+    "title": "Procedure performed: bilateral mastectomy modifier",
+    "template": "2.16.840.1.113883.3.560.1.6",
+    "ph_id": "measure.procedure_performed_bilateral_mastectomy_modifier"
+  },
+  "53D04647-6F05-4474-8982-1C0C9A5EC250": {
+    "title": "Patient characteristic: birth date",
+    "template": "2.16.840.1.113883.3.560.1.25",
+    "ph_id": "birthdate"
+  },
+  "66D2CEFD-B4A2-4A1F-A4DB-5E778FEECDD5": {
+    "title": "Diagnostic study performed: breast cancer screening",
+    "template": "2.16.840.1.113883.3.560.1.3",
+    "ph_id": "measure.diagnostic_study_performed_breast_cancer_screening"
+  },
+  "47BBA026-486C-4DF4-8610-7B53A446FAD8": {
+    "title": "Encounter: encounter outpatient",
+    "template": "2.16.840.1.113883.3.560.1.4",
+    "ph_id": "measure.encounter_encounter_outpatient"
+  },
+  "951485EF-F741-422E-9298-ECC1B090C355": {
+    "title": "Procedure performed: unilateral mastectomy",
+    "template": "2.16.840.1.113883.3.560.1.6",
+    "ph_id": "measure.procedure_performed_unilateral_mastectomy"
+  },
+  "B3B32BFF-1C1E-41C4-8B35-74ECFECFFDFA": {
+    "title": "Procedure performed: unilateral mastectomy CPT",
+    "template": "2.16.840.1.113883.3.560.1.6",
+    "ph_id": "measure.procedure_performed_unilateral_mastectomy_CPT"
+  },
+  "00B5FBF2-85E2-4A86-9117-6F024E7032D8": {
+    "title": "Patient characteristic: Gender Female",
+    "template": "2.16.840.1.113883.3.560.1.1001",
+    "ph_id": "gender_female"
+  }
+}

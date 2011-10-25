@@ -1,0 +1,83 @@
+infile = g/NQF0043_full.json outfile = h/NQF0043_full.json
+***Processing section IPP
+Single child...typcode = SBS
+Single child...typcode = COMP
+Single child...typcode = PRCN
+section 
+IPP.0
+section birthdate
+IPP.0.0.0
+section measurement_period
+mergedatetiminginterval -- section IPP.0 depth = 1 title Patient characteristic: birth date ph_id = birthdate
+emitCode n13 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 64, 0 a, none, true, true ) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode =   childtypecode = PRCN
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode =   childtypecode = PRCN
+mergeEventListTimingEventListFlat -- section IPP  typecode 
+***End of loop...@@change = false
+***Processing section DENOM
+Single child...typcode = DURING
+Single child...typcode = COMP
+section 
+DENOM.0
+section 
+DENOM.1
+section measure.encounter_encounter_outpatient
+DENOM.1.0.0
+section measurement_period
+mergeEventListDuringInterval -- section depth = 1 title Encounter: encounter outpatient ph_id = measure.encounter_encounter_outpatient
+emitCode n14 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_encounter_outpatient, measurement_period.start, measurement_period.end) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = ignore  typecode = PRCN
+   echild type = event_list  typecode = PRCN
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = ignore  typecode = PRCN
+   echild type = event_list  typecode = PRCN
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+Too many children 2
+mergeEventListTimingEventListFlat -- section DENOM  typecode 
+***End of loop...@@change = false
+***Processing section NUMER
+Single child...typcode = COMP
+Single child...typcode = COMP
+Single child...typcode = PRCN
+section 
+NUMER.0
+section 
+NUMER.0.0
+section measure.medication_administered_pneumococcal_vaccination_all_ages
+NUMER.0.1
+section measure.procedure_performed_pneumococcal_vaccination_all_ages
+NUMER.0.2
+section measurement_period
+emitCode n15 status = emit pattern = merged_value_sets type = event_list value = normalize(measure.medication_administered_pneumococcal_vaccination_all_ages, measure.procedure_performed_pneumococcal_vaccination_all_ages) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = event_list  typecode = 
+   echild type = date_interval  typecode = DURING
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+emitCode n16 status = emit pattern = eventlistduringintervalflat type = unknown value = eventsDuring(n15, measurement_period.start, measurement_period.end) depth = section['depth]
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode =   childtypecode = PRCN
+mergeEventListTimingEventListFlat -- section NUMER  typecode 
+***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
+mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
+$$$ section type = unknown sectiontypecode =   childtypecode = PRCN
+mergeEventListTimingEventListFlat -- section NUMER  typecode 
+***End of loop...@@change = false

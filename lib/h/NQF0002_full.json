@@ -20,11 +20,11 @@
               "value": "2",
               "unit": "a",
               "inclusive": "true"
-                                                                                    },
+            },
             "maxDepth": 0,
             "type": "date_interval",
             "num_merges": 0
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "type": "date_single",
@@ -32,7 +32,7 @@
         "pattern": "datetiminginterval",
         "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 2, 0 a, none, true, true )",
         "num_merges": 0
-                        },
+      },
       {
         "conj_code": "AND",
         "name": "n2",
@@ -51,11 +51,11 @@
               "value": "18",
               "unit": "a",
               "inclusive": "true"
-                                                                                    },
+            },
             "maxDepth": 0,
             "type": "date_interval",
             "num_merges": 0
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "type": "date_single",
@@ -63,12 +63,12 @@
         "pattern": "datetiminginterval",
         "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true )",
         "num_merges": 0
-                        }
+      }
     ],
     "maxDepth": 1,
     "type": "unknown",
     "num_merges": 0
-    },
+  },
   "DENOM": {
     "name": "DENOM",
     "children": [
@@ -82,7 +82,7 @@
         "maxDepth": 0,
         "type": "ignore",
         "num_merges": 0
-                        },
+      },
       {
         "conj_code": "AND",
         "name": "n4",
@@ -100,7 +100,7 @@
             "maxDepth": 0,
             "type": "date_interval",
             "num_merges": 0
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
@@ -108,7 +108,7 @@
         "num_merges": 0,
         "status": "emitted",
         "pattern": "eventlistduringinterval"
-                        },
+      },
       {
         "conj_code": "AND",
         "name": "DENOM.2",
@@ -132,19 +132,19 @@
                 "maxDepth": 0,
                 "type": "date_interval",
                 "num_merges": 0
-                                                                                                                }
+              }
             ],
             "maxDepth": 1,
             "value": "measure.encounter_ambulatory_including_pediatrics_encounter",
             "type": "event_list",
             "num_merges": 0
-                                                            }
+          }
         ],
         "maxDepth": 2,
         "value": "measure.pharyngitis_diagnosis_active",
         "type": "event_list",
         "num_merges": 0
-                        },
+      },
       {
         "conj_code": "AND",
         "name": "n5",
@@ -168,7 +168,7 @@
                 "maxDepth": 0,
                 "type": "date_interval",
                 "num_merges": 0
-                                                                                                                }
+              }
             ],
             "maxDepth": 0,
             "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
@@ -176,7 +176,7 @@
             "num_merges": 0,
             "status": "emitted",
             "pattern": "eventlistduringinterval"
-                                                            },
+          },
           {
             "name": "DENOM.3.1",
             "typecode": "SBS",
@@ -185,7 +185,7 @@
               "value": "3",
               "unit": "days",
               "inclusive": "true"
-                                                                                    },
+            },
             "children": [
               {
                 "name": "n3",
@@ -197,12 +197,12 @@
                 "status": "emitted",
                 "pattern": "merged_value_sets",
                 "maxDepth": 0
-                                                                                                                }
+              }
             ],
             "maxDepth": 1,
             "type": "unknown",
             "num_merges": 3
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "type": "event_list",
@@ -210,12 +210,12 @@
         "status": "emitted",
         "pattern": "eventlisttimingeventlist",
         "value": "eventsTimingEvents(n4, n3, SBS, 3,0, days, d, true, true)"
-                        }
+      }
     ],
     "maxDepth": 3,
     "type": "unknown",
     "num_merges": 0
-    },
+  },
   "NUMER": {
     "name": "NUMER",
     "children": [
@@ -236,7 +236,7 @@
               "value": "3",
               "unit": "d",
               "inclusive": "true"
-                                                                                    },
+            },
             "children": [
               {
                 "conj_code": "AND",
@@ -255,7 +255,7 @@
                     "maxDepth": 0,
                     "type": "date_interval",
                     "num_merges": 0
-                                                                                                                                                                                    }
+                  }
                 ],
                 "maxDepth": 0,
                 "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
@@ -263,7 +263,7 @@
                 "num_merges": 0,
                 "status": "emitted",
                 "pattern": "eventlistduringinterval"
-                                                                                                                },
+              },
               {
                 "name": "NUMER.0.0.0.1",
                 "typecode": "SBS",
@@ -272,7 +272,7 @@
                   "value": "3",
                   "unit": "days",
                   "inclusive": "true"
-                                                                                                                                                },
+                },
                 "children": [
                   {
                     "name": "n6",
@@ -284,12 +284,12 @@
                     "status": "emitted",
                     "pattern": "merged_value_sets",
                     "maxDepth": 0
-                                                                                                                                                                                    }
+                  }
                 ],
                 "maxDepth": 1,
                 "type": "unknown",
                 "num_merges": 3
-                                                                                                                }
+              }
             ],
             "maxDepth": 0,
             "type": "event_list",
@@ -297,7 +297,7 @@
             "status": "emitted",
             "pattern": "eventlisttimingeventlist",
             "value": "eventsTimingEvents(n7, n6, SBS, 3,0, days, d, true, true)"
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n8, true, EAS, 3,0, d, none, true, true)",
@@ -305,7 +305,7 @@
         "num_merges": 0,
         "status": "emitted",
         "pattern": "eventlisttimingeventlistflat"
-                        },
+      },
       {
         "conj_code": "AND",
         "name": "n10",
@@ -322,7 +322,7 @@
               "value": "3",
               "unit": "d",
               "inclusive": "true"
-                                                                                    },
+            },
             "children": [
               {
                 "conj_code": "AND",
@@ -341,7 +341,7 @@
                     "maxDepth": 0,
                     "type": "date_interval",
                     "num_merges": 0
-                                                                                                                                                                                    }
+                  }
                 ],
                 "maxDepth": 0,
                 "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
@@ -349,7 +349,7 @@
                 "num_merges": 0,
                 "status": "emitted",
                 "pattern": "eventlistduringinterval"
-                                                                                                                },
+              },
               {
                 "name": "NUMER.1.0.0.1",
                 "typecode": "SBS",
@@ -358,7 +358,7 @@
                   "value": "3",
                   "unit": "days",
                   "inclusive": "true"
-                                                                                                                                                },
+                },
                 "children": [
                   {
                     "name": "n6",
@@ -370,12 +370,12 @@
                     "status": "emitted",
                     "pattern": "merged_value_sets",
                     "maxDepth": 0
-                                                                                                                                                                                    }
+                  }
                 ],
                 "maxDepth": 1,
                 "type": "unknown",
                 "num_merges": 3
-                                                                                                                }
+              }
             ],
             "maxDepth": 0,
             "type": "event_list",
@@ -383,7 +383,7 @@
             "status": "emitted",
             "pattern": "eventlisttimingeventlist",
             "value": "eventsTimingEvents(n7, n6, SBS, 3,0, days, d, true, true)"
-                                                            }
+          }
         ],
         "maxDepth": 0,
         "value": "eventsTimingEvents(measure.group_a_streptococcus_test_laboratory_test_performed, n8, false, SAE, 3,0, d, none, true, true)",
@@ -391,18 +391,18 @@
         "num_merges": 0,
         "status": "emitted",
         "pattern": "eventlisttimingeventlistflat"
-                        }
+      }
     ],
     "maxDepth": 1,
     "type": "unknown",
     "num_merges": 0
-    },
+  },
   "EXCLUSION": {
     "name": "EXCLUSION",
     "children": [
       {
         "conj_code": "AND",
-        "name": "n13",
+        "name": "EXCLUSION.0",
         "typecode": "PRCN",
         "level": 0,
         "children": [
@@ -412,11 +412,11 @@
             "value": "normalize(measure.pharyngitis_antibiotics_medication_dispensed, measure.pharyngitis_antibiotics_medication_order, measure.pharyngitis_antibiotics_medication_active)",
             "type": "event_list",
             "level": "0",
-            "num_merges": "0",
+            "num_merges": 0,
             "status": "emitted",
             "pattern": "merged_value_sets",
             "maxDepth": 0
-                                                            },
+          },
           {
             "name": "n11",
             "typecode": "SBS",
@@ -426,7 +426,7 @@
               "value": "30",
               "unit": "days",
               "inclusive": "true"
-                                                                                    },
+            },
             "children": [
               {
                 "name": "EXCLUSION.0.3.0.0",
@@ -437,7 +437,7 @@
                 "maxDepth": 0,
                 "type": "date_interval",
                 "num_merges": 0
-                                                                                                                }
+              }
             ],
             "maxDepth": 0,
             "value": "eventsDuring(measure.encounter_ambulatory_including_pediatrics_encounter, measurement_period.start, measurement_period.end)",
@@ -445,18 +445,15 @@
             "num_merges": 0,
             "status": "emitted",
             "pattern": "eventlistduringinterval"
-                                                            }
+          }
         ],
-        "maxDepth": 0,
-        "type": "event_list",
-        "num_merges": 0,
-        "status": "emitted",
-        "pattern": "eventlisttimingeventlistsibling",
-        "value": "eventsTimingEvents(n12, n11, SBS, 30,0, days, d, true, true)"
-                        }
+        "maxDepth": 1,
+        "type": "unknown",
+        "num_merges": 0
+      }
     ],
-    "maxDepth": 1,
+    "maxDepth": 2,
     "type": "unknown",
     "num_merges": 0
-    }
+  }
 }

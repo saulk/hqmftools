@@ -1,0 +1,16 @@
+#*** Code for IPP
+IPP{
+n13 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 64, 0 a, none, true, true )
+return(n13 )
+}
+#*** Code for DENOM
+DENOM{
+n14 = eventsDuring(measure.encounter_encounter_outpatient, measurement_period.start, measurement_period.end)
+return(n14 )
+}
+#*** Code for NUMER
+NUMER{
+n15 = normalize(measure.medication_administered_pneumococcal_vaccination_all_ages, measure.procedure_performed_pneumococcal_vaccination_all_ages)
+n16 = eventsDuring(n15, measurement_period.start, measurement_period.end)
+return(n16 )
+}

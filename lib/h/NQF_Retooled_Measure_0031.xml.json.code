@@ -1,0 +1,19 @@
+#*** Code for IPP
+IPP{
+n39 = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 41, 0 a, none, true, true )
+return(n39 )
+}
+#*** Code for DENOM
+DENOM{
+n40 = eventsTimingEvents(measure.encounter_encounter_outpatient, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+return(n40 )
+}
+#*** Code for NUMER
+NUMER{
+n41 = eventsTimingEvents(measure.diagnostic_study_performed_breast_cancer_screening, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true)
+return(n41 )
+}
+#*** Code for EXCLUSION
+EXCLUSION{
+return( )
+}

@@ -15,19 +15,23 @@ IPP.1.0.0
 section measurement_period
 mergedatetiminginterval -- section IPP.0 depth = 1 title Patient characteristic: birth date ph_id = birthdate
 mergedatetiminginterval -- section IPP.1 depth = 1 title Patient characteristic: birth date ph_id = birthdate
-emitCode n14 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true ) depth = section['depth]
-emitCode n15 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 49, 0 a, none, true, true ) depth = section['depth]
+emitCode n17 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 18, 0 a, none, true, true ) depth = section['depth]
+emitCode n18 status = emit pattern = datetiminginterval type = date_single value = dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 49, 0 a, none, true, true ) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = date_single  typecode = PRCN
+   echild type = date_single  typecode = PRCN
 mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
 Too many children 2
 mergeEventListTimingEventListFlat -- section IPP  typecode 
-mergeEventListTimingEventListSibling -- section IPP depth = 1 title  ph_id = 
-node IPP has children = 2
 ***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+   echild type = date_single  typecode = PRCN
+   echild type = date_single  typecode = PRCN
 mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
 Too many children 2
 mergeEventListTimingEventListFlat -- section IPP  typecode 
-mergeEventListTimingEventListSibling -- section IPP depth = 1 title  ph_id = 
-node IPP has children = 2
 ***End of loop...@@change = false
 ***Processing section DENOM
 Single child...typcode = DURING
@@ -82,9 +86,23 @@ section measurement_period
 mergeEventListDuringInterval -- section depth = 1 title  ph_id = measure.diagnosis_low_back_pain
 mergeEventListDuringInterval -- section depth = 1 title Diagnosis active: low back pain ph_id = measure.diagnosis_low_back_pain
 mergeEventListDuringInterval -- section depth = 1 title Encounter: Encounter ambulatory including orthopedics and chiropractics ph_id = measure.encounter_ambulatory_including_orthopedics_and_chiropractics
-emitCode n16 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
-emitCode n16 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
-emitCode n17 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_orthopedics_and_chiropractics, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n19 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n19 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n20 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.encounter_ambulatory_including_orthopedics_and_chiropractics, measurement_period.start, measurement_period.end) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnosis active: low back pain ph_id = measure.diagnosis_low_back_pain
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnosis active: cancer ph_id = measure.diagnosis_active_cancer
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnosis active: trauma ph_id = measure.diagnosis_active_trauma
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnosis active: IV drug abuse ph_id = measure.diagnosis_active_iv_drug_abuse
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnosis active: neurologic impairment ph_id = measure.diagnosis_active_neurologic_impairment
+    section has children = 1
+mergeEventListDuringIntervalFlat -- section depth = 0 title Initial Patient Population ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 0 title Diagnosis active: low back pain ph_id = measure.diagnosis_low_back_pain
+mergeEventListDuringIntervalFlat -- section depth = 0 title Encounter: Encounter ambulatory including orthopedics and chiropractics ph_id = measure.encounter_ambulatory_including_orthopedics_and_chiropractics
 mergeEventListTimingInterval -- section depth = 2 title  ph_id = 
 mergeEventListTimingInterval -- section depth = 1 title Diagnosis active: low back pain ph_id = measure.diagnosis_low_back_pain
 $$$ section type = event_list sectiontypecode = PRCN  childtypecode = SBS
@@ -103,28 +121,26 @@ mergeEventListTimingInterval -- section depth = 1 title Diagnosis active: neurol
 mergeEventListTimingInterval -- section depth = 0 title Initial Patient Population ph_id = 
 mergeEventListTimingInterval -- section depth = 0 title Diagnosis active: low back pain ph_id = measure.diagnosis_low_back_pain
 mergeEventListTimingInterval -- section depth = 0 title Encounter: Encounter ambulatory including orthopedics and chiropractics ph_id = measure.encounter_ambulatory_including_orthopedics_and_chiropractics
-emitCode n18 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_cancer, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
-emitCode n19 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_trauma, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
-emitCode n20 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_iv_drug_abuse, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
-emitCode n21 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_neurologic_impairment, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+emitCode n21 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_cancer, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+emitCode n22 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_trauma, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+emitCode n23 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_iv_drug_abuse, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
+emitCode n24 status = emit pattern = eventlisttimingeventlist type = event_list value = eventsTimingEvents(measure.diagnosis_active_neurologic_impairment, measurement_period.end, measurement_period.end, true,EAS, 2,0, a, none, true, true) depth = section['depth]
 mergeEventListTimingEventList -- section DENOM depth = 2 title  ph_id = 
 mergeEventListTimingEventListFlat -- section DENOM.0  typecode PRCN
-emitCode n22 status = emit pattern = eventlisttimingeventlistflat type = event_list value = FIRST( eventsTimingEvents(measure.diagnosis_low_back_pain, n16, false, SBS, 0,0, none, none, true, true) ) depth = section['depth]
-mergeEventListTimingEventListSibling -- section DENOM depth = 1 title  ph_id = 
-node DENOM has children = 8
+emitCode n25 status = emit pattern = eventlisttimingeventlistflat type = event_list value = FIRST( eventsTimingEvents(measure.diagnosis_low_back_pain, n19, false, SBS, 0,0, none, none, true, true) ) depth = section['depth]
 ***End of loop...@@change = true
-emitCode n23 status = emit pattern = merged_value_sets type = event_list value = normalize(n22, n18, n19, n20, n21) depth = section['depth]
+emitCode n26 status = emit pattern = merged_value_sets type = event_list value = normalize(n25, n21, n22, n23, n24) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 4
 mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
 Too many children 4
 mergeEventListTimingEventListFlat -- section DENOM  typecode 
-mergeEventListTimingEventListSibling -- section DENOM depth = 1 title  ph_id = 
-node DENOM has children = 4
 ***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 4
 mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
 Too many children 4
 mergeEventListTimingEventListFlat -- section DENOM  typecode 
-mergeEventListTimingEventListSibling -- section DENOM depth = 1 title  ph_id = 
-node DENOM has children = 4
 ***End of loop...@@change = false
 ***Processing section NUMER
 Single child...typcode = DURING
@@ -140,19 +156,20 @@ section measure.diagnosis_low_back_pain
 NUMER.0.0.0.0.0
 section measurement_period
 mergeEventListDuringInterval -- section depth = 1 title  ph_id = measure.diagnosis_low_back_pain
-emitCode n24 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
+emitCode n27 status = emit pattern = eventlistduringinterval type = event_list value = eventsDuring(measure.diagnosis_low_back_pain, measurement_period.start, measurement_period.end) depth = section['depth]
+mergeEventListDuringIntervalFlat -- section depth = 2 title  ph_id = 
+mergeEventListDuringIntervalFlat -- section depth = 1 title Diagnostic study performed: Imaging Study-Spinal ph_id = measure.diagnostic_study_performed_imaging_study_spinal
+    section has children = 1
 mergeEventListTimingInterval -- section depth = 2 title  ph_id = 
 mergeEventListTimingInterval -- section depth = 1 title Diagnostic study performed: Imaging Study-Spinal ph_id = measure.diagnostic_study_performed_imaging_study_spinal
 $$$ section type = event_list sectiontypecode = PRCN  childtypecode = SAS
 mergeEventListTimingEventList -- section NUMER depth = 2 title  ph_id = 
 mergeEventListTimingEventListFlat -- section NUMER.0  typecode PRCN
-emitCode n25 status = emit pattern = eventlisttimingeventlistflat type = event_list value = FIRST( eventsTimingEvents(measure.diagnostic_study_performed_imaging_study_spinal, n24, false, SAS, 0,0, none, none, true, true) ) depth = section['depth]
-mergeEventListTimingEventListSibling -- section NUMER depth = 1 title  ph_id = 
-node NUMER has children = 1
+emitCode n28 status = emit pattern = eventlisttimingeventlistflat type = event_list value = FIRST( eventsTimingEvents(measure.diagnostic_study_performed_imaging_study_spinal, n27, false, SAS, 0,0, none, none, true, true) ) depth = section['depth]
 ***End of loop...@@change = true
+mergeEventListDuringIntervalFlat -- section depth = 1 title  ph_id = 
+    section has children = 1
 mergeEventListTimingInterval -- section depth = 1 title  ph_id = 
 $$$ section type = unknown sectiontypecode =   childtypecode = PRCN
 mergeEventListTimingEventListFlat -- section NUMER  typecode 
-mergeEventListTimingEventListSibling -- section NUMER depth = 1 title  ph_id = 
-node NUMER has children = 1
 ***End of loop...@@change = false

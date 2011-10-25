@@ -1,0 +1,57 @@
+{
+  "A22A8B70-C390-4DB2-8811-F9B009ED3A45": {
+    "title": "Measurement period",
+    "template": "2.16.840.1.113883.3.560.1.74",
+    "ph_id": "measurement_period"
+    },
+  "85E93777-CA65-4932-A043-B4F064E82ACC": {
+    "title": "Measurement start date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period.start"
+    },
+  "5DCD755D-82CD-4E71-B7AF-E972CF56F24A": {
+    "title": "Measurement end date",
+    "template": "2.16.840.1.113883.3.560.1.75",
+    "ph_id": "measurement_period.end"
+    },
+  "6E1B0350-33A6-43F8-8097-27C339C606B1": {
+    "title": "Patient characteristic: birth date",
+    "template": "2.16.840.1.113883.3.560.1.25",
+    "ph_id": "birthdate"
+    },
+  "0D2FA9FA-9AA7-4F6C-BA9C-133AD0C3B58B": {
+    "title": "Diagnosis active: cancer",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.diagnosis_active_cancer"
+    },
+  "87E68228-9CB7-458D-B820-853B81CE15A4": {
+    "title": "Encounter: Encounter ambulatory including orthopedics and chiropractics",
+    "template": "2.16.840.1.113883.3.560.1.4",
+    "ph_id": "measure.encounter_ambulatory_including_orthopedics_and_chiropractics"
+    },
+  "0735E185-D7B1-4900-9B20-8E9EBD723A9F": {
+    "title": "Diagnostic study performed: Imaging Study-Spinal",
+    "template": "2.16.840.1.113883.3.560.1.3",
+    "ph_id": "measure.diagnostic_study_performed_imaging_study_spinal"
+    },
+  "5DC80DA4-22A7-4505-B606-284B9D17452C": {
+    "title": "Diagnosis active: IV drug abuse",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.diagnosis_active_iv_drug_abuse"
+    },
+  "2CD25F26-1368-4E51-A141-1F16110AB9BE": {
+    "title": "Diagnosis active: low back pain",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.diagnosis_low_back_pain"
+    },
+  "7194DA66-0C6C-4515-8CBD-D238A27142A3": {
+    "title": "Diagnosis active: neurologic impairment",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.diagnosis_active_neurologic_impairment"
+    },
+  "72EFD838-2E5D-4D9A-92EA-C76ABF592256": {
+    "title": "Diagnosis active: trauma",
+    "template": "2.16.840.1.113883.3.560.1.2",
+    "ph_id": "measure.diagnosis_active_trauma"
+    }
+}

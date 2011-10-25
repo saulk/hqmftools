@@ -1,0 +1,337 @@
+{
+  "IPP": {
+    "name": "IPP",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "IPP.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.0.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "IPP.0.0.0",
+                "typecode": "SBS",
+                "level": 2,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "low": {
+                  "value": "18",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "AND",
+        "name": "IPP.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.1.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "IPP.1.0.0",
+                "typecode": "SBS",
+                "level": 2,
+                "ph_id": "measurement_period",
+                "title": "Measurement period",
+                "high": {
+                  "value": "49",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "DENOM": {
+    "name": "DENOM",
+    "children": [
+      {
+        "conj_code": "OR",
+        "name": "DENOM.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_low_back_pain",
+        "title": "Diagnosis active: low back pain",
+        "children": [
+          {
+            "name": "DENOM.0.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "subs_code": "FIRST",
+                "name": "DENOM.0.0.0",
+                "typecode": "SBS",
+                "level": 2,
+                "ph_id": "measure.diagnosis_low_back_pain",
+                "children": [
+                  {
+                    "name": "DENOM.0.0.0.0",
+                    "typecode": "COMP",
+                    "level": 3,
+                    "children": [
+                      {
+                        "name": "DENOM.0.0.0.0.0",
+                        "typecode": "DURING",
+                        "level": 4,
+                        "ph_id": "measurement_period",
+                        "title": "Measurement period"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "OR",
+        "name": "DENOM.1",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_active_cancer",
+        "title": "Diagnosis active: cancer",
+        "children": [
+          {
+            "name": "DENOM.1.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.1.0.0",
+                "typecode": "EAS",
+                "level": 2,
+                "inversionInd": "*invert*",
+                "ph_id": "measurement_period.end",
+                "title": "Measurement end date",
+                "high": {
+                  "value": "2",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "OR",
+        "name": "DENOM.2",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_active_trauma",
+        "title": "Diagnosis active: trauma",
+        "children": [
+          {
+            "name": "DENOM.2.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.2.0.0",
+                "typecode": "EAS",
+                "level": 2,
+                "inversionInd": "*invert*",
+                "ph_id": "measurement_period.end",
+                "title": "Measurement end date",
+                "high": {
+                  "value": "2",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "OR",
+        "name": "DENOM.3",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_active_iv_drug_abuse",
+        "title": "Diagnosis active: IV drug abuse",
+        "children": [
+          {
+            "name": "DENOM.3.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.3.0.0",
+                "typecode": "EAS",
+                "level": 2,
+                "inversionInd": "*invert*",
+                "ph_id": "measurement_period.end",
+                "title": "Measurement end date",
+                "high": {
+                  "value": "2",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "OR",
+        "name": "DENOM.4",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_active_neurologic_impairment",
+        "title": "Diagnosis active: neurologic impairment",
+        "children": [
+          {
+            "name": "DENOM.4.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.4.0.0",
+                "typecode": "EAS",
+                "level": 2,
+                "inversionInd": "*invert*",
+                "ph_id": "measurement_period.end",
+                "title": "Measurement end date",
+                "high": {
+                  "value": "2",
+                  "unit": "a",
+                  "inclusive": "true"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.5",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "",
+        "title": "Initial Patient Population"
+      },
+      {
+        "conj_code": "AND",
+        "subs_code": "FIRST",
+        "name": "DENOM.6",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnosis_low_back_pain",
+        "title": "Diagnosis active: low back pain",
+        "children": [
+          {
+            "name": "DENOM.6.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.6.0.0",
+                "typecode": "DURING",
+                "level": 2,
+                "ph_id": "measurement_period",
+                "title": "Measurement period"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "conj_code": "AND",
+        "name": "DENOM.7",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.encounter_ambulatory_including_orthopedics_and_chiropractics",
+        "title": "Encounter: Encounter ambulatory including orthopedics and chiropractics",
+        "children": [
+          {
+            "name": "DENOM.7.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "name": "DENOM.7.0.0",
+                "typecode": "DURING",
+                "level": 2,
+                "ph_id": "measurement_period",
+                "title": "Measurement period"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "NUMER": {
+    "name": "NUMER",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "NUMER.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.diagnostic_study_performed_imaging_study_spinal",
+        "title": "Diagnostic study performed: Imaging Study-Spinal",
+        "children": [
+          {
+            "name": "NUMER.0.0",
+            "typecode": "COMP",
+            "level": 1,
+            "children": [
+              {
+                "subs_code": "FIRST",
+                "name": "NUMER.0.0.0",
+                "typecode": "SAS",
+                "level": 2,
+                "ph_id": "measure.diagnosis_low_back_pain",
+                "children": [
+                  {
+                    "name": "NUMER.0.0.0.0",
+                    "typecode": "COMP",
+                    "level": 3,
+                    "children": [
+                      {
+                        "name": "NUMER.0.0.0.0.0",
+                        "typecode": "DURING",
+                        "level": 4,
+                        "ph_id": "measurement_period",
+                        "title": "Measurement period",
+                        "high": {
+                          "value": "28",
+                          "unit": "d",
+                          "inclusive": "true"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

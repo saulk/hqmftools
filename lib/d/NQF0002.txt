@@ -1,0 +1,89 @@
+****MeasureAttributes*** 16
+adding key:D578142D-F78F-4BF4-8194-82015DE21A7F 36 title:Measurement period template:2.16.840.1.113883.3.560.1.74
+adding key:30235563-1758-4C31-9172-0CF34BEF23D6 36 title:Measurement start date template:2.16.840.1.113883.3.560.1.75
+adding key:6921326D-5B7C-4294-91C1-2789EDF323BF 36 title:Measurement end date template:2.16.840.1.113883.3.560.1.75
+****DataSpecs***
+adding key:CC73216C-43BF-4D10-96A6-E6DDBD8AC394 36 title:Patient characteristic: birth date template:2.16.840.1.113883.3.560.1.25
+adding key:CA71325F-084A-4F5A-9214-229D925F836D 36 title:Encounter: encounter ambulatory including pediatrics template:2.16.840.1.113883.3.560.1.4
+adding key:AF9EE784-50CF-413F-9082-41A3330511A1 36 title:Laboratory test performed: Group A Streptococcus Test template:2.16.840.1.113883.3.560.1.5
+adding key:F33D9CE9-A084-4BA1-AB0E-1CBEF3934C88 36 title:Diagnosis active: pharyngitis template:2.16.840.1.113883.3.560.1.2
+adding key:6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4 36 title:Medication active: pharyngitis antibiotics template:2.16.840.1.113883.3.560.1.13
+adding key:C5239EC0-B769-476F-B79E-6927ED720A03 36 title:Medication dispensed: pharyngitis antibiotics template:2.16.840.1.113883.3.560.1.8
+adding key:B2EC949E-E9FD-4184-941E-F1F73470CB21 36 title:Medication order: pharyngitis antibiotics template:2.16.840.1.113883.3.560.1.17
+
+*** All symbols defined ***
+key:D578142D-F78F-4BF4-8194-82015DE21A7F  36 title:Measurement period
+key:30235563-1758-4C31-9172-0CF34BEF23D6  36 title:Measurement start date
+key:6921326D-5B7C-4294-91C1-2789EDF323BF  36 title:Measurement end date
+key:CC73216C-43BF-4D10-96A6-E6DDBD8AC394  36 title:Patient characteristic: birth date
+key:CA71325F-084A-4F5A-9214-229D925F836D  36 title:Encounter: encounter ambulatory including pediatrics
+key:AF9EE784-50CF-413F-9082-41A3330511A1  36 title:Laboratory test performed: Group A Streptococcus Test
+key:F33D9CE9-A084-4BA1-AB0E-1CBEF3934C88  36 title:Diagnosis active: pharyngitis
+key:6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4  36 title:Medication active: pharyngitis antibiotics
+key:C5239EC0-B769-476F-B79E-6927ED720A03  36 title:Medication dispensed: pharyngitis antibiotics
+key:B2EC949E-E9FD-4184-941E-F1F73470CB21  36 title:Medication order: pharyngitis antibiotics
+adding key:45A1DEFB-0271-4277-B84C-F6DED6B6FD8E 36 title:Initial Patient Population template:
+****IPP*** 2
+PRCN(0):  conj = AND id = CC73216C-43BF-4D10-96A6-E6DDBD8AC394 length = 36  Patient characteristic: birth date   template = Patient characteristic 
+	COMP(1):
+		 SBS(2) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+		       pauseQuantity low value = 2 unit = a inclusive = true
+PRCN(0):  conj = AND id = CC73216C-43BF-4D10-96A6-E6DDBD8AC394 length = 36  Patient characteristic: birth date   template = Patient characteristic 
+	COMP(1):
+		 SBS(2) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+		          pauseQuantity high  value = 18 unit = a inclusive = true
+adding key:66D82442-4198-44A1-A489-EE9F819F1636 36 title:Denominator template:
+****DENOM*** 4
+PRCN(0):  conj = AND id = 45A1DEFB-0271-4277-B84C-F6DED6B6FD8E length = 36  Initial Patient Population    
+PRCN(0):  conj = AND id = CA71325F-084A-4F5A-9214-229D925F836D length = 36  Encounter: encounter ambulatory including pediatrics   template = Encounter 
+	COMP(1):
+		 DURING(2) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+PRCN(0):  conj = AND id = F33D9CE9-A084-4BA1-AB0E-1CBEF3934C88 length = 36  Diagnosis active: pharyngitis   template = Diagnosis active 
+	COMP(1):
+		 DURING(2) :    id = CA71325F-084A-4F5A-9214-229D925F836D    title = Encounter: encounter ambulatory including pediatrics
+			COMP(3):
+				 DURING(4) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+PRCN(0):  conj = AND       
+	PRCN(1):  conj = OR id = CA71325F-084A-4F5A-9214-229D925F836D length = 36  Encounter: encounter ambulatory including pediatrics   template = Encounter 
+		COMP(2):
+			 DURING(3) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+	 SBS(1) :    id = id:none    title = 
+	          pauseQuantity high  value = 3 unit = days inclusive = true
+		PRCN(2):  conj = OR id = C5239EC0-B769-476F-B79E-6927ED720A03 length = 36  Medication dispensed: pharyngitis antibiotics   template = Medication dispensed 
+			COMP(3):
+		PRCN(2):  conj = OR id = B2EC949E-E9FD-4184-941E-F1F73470CB21 length = 36  Medication order: pharyngitis antibiotics   template = Medication order 
+			COMP(3):
+		PRCN(2):  conj = OR id = 6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4 length = 36  Medication active: pharyngitis antibiotics   template = Medication active 
+			COMP(3):
+adding key:1E223193-25A4-4464-9D7E-89B5DCBFC513 36 title:Numerator template:
+****NUMER*** 2
+PRCN(0):  conj = AND id = AF9EE784-50CF-413F-9082-41A3330511A1 length = 36  Laboratory test performed: Group A Streptococcus Test   template = Laboratory test performed 
+	COMP(1):
+		 EAS(2) *invert*:    id = id:none    title = 
+		          pauseQuantity high  value = 3 unit = d inclusive = true
+			PRCN(3):  conj = AND id = CA71325F-084A-4F5A-9214-229D925F836D length = 36  Encounter: encounter ambulatory including pediatrics   template = Encounter 
+				COMP(4):
+					 DURING(5) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+			 SBS(3) :    id = id:none    title = 
+			          pauseQuantity high  value = 3 unit = days inclusive = true
+				PRCN(4):  conj = OR id = C5239EC0-B769-476F-B79E-6927ED720A03 length = 36  Medication dispensed: pharyngitis antibiotics   template = Medication dispensed 
+					COMP(5):
+				PRCN(4):  conj = OR id = B2EC949E-E9FD-4184-941E-F1F73470CB21 length = 36  Medication order: pharyngitis antibiotics   template = Medication order 
+					COMP(5):
+				PRCN(4):  conj = OR id = 6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4 length = 36  Medication active: pharyngitis antibiotics   template = Medication active 
+					COMP(5):
+PRCN(0):  conj = AND id = AF9EE784-50CF-413F-9082-41A3330511A1 length = 36  Laboratory test performed: Group A Streptococcus Test   template = Laboratory test performed 
+	COMP(1):
+		 SAE(2) :    id = id:none    title = 
+		          pauseQuantity high  value = 3 unit = d inclusive = true
+			PRCN(3):  conj = AND id = CA71325F-084A-4F5A-9214-229D925F836D length = 36  Encounter: encounter ambulatory including pediatrics   template = Encounter 
+				COMP(4):
+					 DURING(5) :    id = D578142D-F78F-4BF4-8194-82015DE21A7F    title = Measurement period
+			 SBS(3) :    id = id:none    title = 
+			          pauseQuantity high  value = 3 unit = days inclusive = true
+				PRCN(4):  conj = OR id = C5239EC0-B769-476F-B79E-6927ED720A03 length = 36  Medication dispensed: pharyngitis antibiotics   template = Medication dispensed 
+					COMP(5):
+				PRCN(4):  conj = OR id = B2EC949E-E9FD-4184-941E-F1F73470CB21 length = 36  Medication order: pharyngitis antibiotics   template = Medication order 
+					COMP(5):
+				PRCN(4):  conj = OR id = 6A3F288D-B565-4BE9-B6DD-DCDEAB2E6DD4 length = 36  Medication active: pharyngitis antibiotics   template = Medication active 
+					COMP(5):

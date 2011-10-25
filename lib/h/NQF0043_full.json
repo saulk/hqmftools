@@ -1,0 +1,129 @@
+{
+  "IPP": {
+    "name": "IPP",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n13",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "birthdate",
+        "title": "Patient characteristic: birth date",
+        "children": [
+          {
+            "name": "IPP.0.0.0",
+            "typecode": "SBS",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "low": {
+              "value": "64",
+              "unit": "a",
+              "inclusive": "true"
+            },
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "type": "date_single",
+        "status": "emitted",
+        "pattern": "datetiminginterval",
+        "value": "dateTimingInterval(birthdate, measurement_period.start, measurement_period.end, SBS, 64, 0 a, none, true, true )",
+        "num_merges": 0
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "DENOM": {
+    "name": "DENOM",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "DENOM.0",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "",
+        "title": "Initial Patient Population",
+        "maxDepth": 0,
+        "type": "ignore",
+        "num_merges": 0
+      },
+      {
+        "conj_code": "AND",
+        "name": "n14",
+        "typecode": "PRCN",
+        "level": 0,
+        "ph_id": "measure.encounter_encounter_outpatient",
+        "title": "Encounter: encounter outpatient",
+        "children": [
+          {
+            "name": "DENOM.1.0.0",
+            "typecode": "DURING",
+            "level": 2,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "value": "eventsDuring(measure.encounter_encounter_outpatient, measurement_period.start, measurement_period.end)",
+        "type": "event_list",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlistduringinterval"
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  },
+  "NUMER": {
+    "name": "NUMER",
+    "children": [
+      {
+        "conj_code": "AND",
+        "name": "n16",
+        "typecode": "PRCN",
+        "level": 0,
+        "children": [
+          {
+            "name": "n15",
+            "oldnames": "NUMER.0.0,NUMER.0.1",
+            "value": "normalize(measure.medication_administered_pneumococcal_vaccination_all_ages, measure.procedure_performed_pneumococcal_vaccination_all_ages)",
+            "type": "event_list",
+            "level": "0",
+            "num_merges": "0",
+            "status": "emitted",
+            "pattern": "merged_value_sets",
+            "maxDepth": 0
+          },
+          {
+            "name": "NUMER.0.2",
+            "typecode": "DURING",
+            "level": 1,
+            "ph_id": "measurement_period",
+            "title": "Measurement period",
+            "maxDepth": 0,
+            "type": "date_interval",
+            "num_merges": 0
+          }
+        ],
+        "maxDepth": 0,
+        "type": "unknown",
+        "num_merges": 0,
+        "status": "emitted",
+        "pattern": "eventlistduringintervalflat",
+        "value": "eventsDuring(n15, measurement_period.start, measurement_period.end)"
+      }
+    ],
+    "maxDepth": 1,
+    "type": "unknown",
+    "num_merges": 0
+  }
+}
